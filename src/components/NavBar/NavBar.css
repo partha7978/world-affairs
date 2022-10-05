@@ -3,6 +3,8 @@
     width: 20vw;
     background-color: rgb(0, 0, 0);
     border-radius: 0 20px 20px 0;
+    display: flex;
+    flex-direction: column;
 }
 .main-logo {
     font-family: 'Sacramento', cursive;
@@ -57,4 +59,21 @@
 .navBar-links p:hover {
     background-color: rgb(49, 46, 129, 0.75);
     color: rgb(165, 180, 252);
+}
+.navBar-social {
+    margin: 0 1rem;
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+}
+.navBar-social p {
+    font-size: 1rem;
+    color: rgb(72, 72, 72);
+    margin-bottom: 0.2rem;
+    letter-spacing: 1px;
+}
+.navBar-social p a {
+    color: rgb(72, 72, 72);
+    text-decoration: none;
+    font-weight: 600;
 }

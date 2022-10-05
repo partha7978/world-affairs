@@ -28,6 +28,9 @@ export default function NavBar() {
               <option>Technology</option>
             </select> */}
         </div>
+        <div className="navBar-social">
+            <p>Developed by <a href="http://">Partha</a></p>
+        </div>
     </div>
   )
 }
