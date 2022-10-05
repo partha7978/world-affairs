@@ -19,9 +19,22 @@
 .news-section {
     width: 100%;
     height: auto;
+    overflow: scroll;
+}
+.news-section h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 1rem 0;
+    padding: 0 1rem;
+
 }
 .news-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    row-gap: 1.5rem;
+    /* width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-around; */
 }
