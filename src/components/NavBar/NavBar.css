@@ -76,4 +76,25 @@
     color: rgb(72, 72, 72);
     text-decoration: none;
     font-weight: 600;
+    transition: all 0.3s linear;
+}
+.navBar-social p a:hover {
+    color: rgb(165, 180, 252);
+}
+
+
+/* ! For responsive menu bar */
+@media screen and (max-width: 1000px) {
+    .navbar-container {
+        display: none;
+    }
+    .main-logo {
+        display: none;
+    }
+    .navBar-links {
+        display: none;
+    }
+    .navBar-social {
+        display: none;
+    }
 }

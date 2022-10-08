@@ -6,7 +6,9 @@ export default function News() {
   return (
     <div className="news-container">
         <div className="news-navBar">
-          NAVBAR
+          <div className="main-logo">
+              <h3>World Affairs</h3>
+          </div>
         </div>
         <div className="news-main-container">
           <div className="news-section">

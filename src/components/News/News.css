@@ -9,6 +9,9 @@
     width: 100%;
     background-color: #ffffff;
 }
+.news-navBar > .main-logo {
+    display: none;
+}
 .news-main-container {
     height: 95vh;
     width:  100%;
@@ -39,4 +42,21 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
     justify-content: center; */
+}
+
+@media only screen and (max-width: 1000px) {
+    .news-container {
+        width: 100vw;
+        border-radius: 0;
+    }
+    .news-navBar {
+        height: auto;
+    }
+    .news-navBar > .main-logo {
+        display: block;
+        margin:0;
+    }
+    .main-logo h3 {
+        margin: 0.2rem 0;
+    }
 }
