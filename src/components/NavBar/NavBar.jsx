@@ -3,8 +3,16 @@ import './NavBar.css'
 import indiaLogo from '../../assets/image/india.webp'
 import worldLogo from '../../assets/image/world.webp'
 import homeImage from '../../assets/image/house.webp'
+import Divider from '@mui/material/Divider';
+import Chip from '@mui/material/Chip';
 
 export default function NavBar() {
+  let navBarElementStyle = {
+    backgroundColor: '#171717',
+    color: '#ffffff',
+    margin: 0.5,
+    cursor: 'pointer'
+  }
   return (
     <div className="navbar-container">
         <div className="main-logo">
@@ -19,14 +27,20 @@ export default function NavBar() {
             </p>
             <p><img src={indiaLogo} alt="india logo" />India</p>
             <p><img src={worldLogo} alt="world logo" />World</p>
-            {/* <select >
-              <option disabled={true}>Select category</option>
-              <option>Entertainment</option>
-              <option>Health</option>
-              <option>Science</option>
-              <option>Sports</option>
-              <option>Technology</option>
-            </select> */}
+            <div className="navBar-chip-countries">
+              <span>Filter by countries</span>
+              <Divider sx={{backgroundColor: '#ffffff'}}/>
+              <div className="navBar-chips">
+                <Chip sx={navBarElementStyle} label="USA" />
+                <Chip sx={navBarElementStyle} label="France" />
+                <Chip sx={navBarElementStyle} label="Germany" />
+                <Chip sx={navBarElementStyle} label="China" />
+                <Chip sx={navBarElementStyle} label="Russia" />
+                <Chip sx={navBarElementStyle} label="Japan" />
+                <Chip sx={navBarElementStyle} label="Australia" />
+                <Chip sx={navBarElementStyle} label="United Kingdom" />
+              </div>
+            </div>
         </div>
         <div className="navBar-social">
             <p>Developed by <a href="http://">Partha</a></p>

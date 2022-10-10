@@ -81,7 +81,16 @@
 .navBar-social p a:hover {
     color: rgb(165, 180, 252);
 }
+.navBar-chips {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0.5rem;
+}
 
+.country-chip:hover {
+    background-color: rgb(49, 46, 129, 0.75);
+    color: rgb(165, 180, 252);
+}
 
 /* ! For responsive menu bar */
 @media screen and (max-width: 1000px) {
