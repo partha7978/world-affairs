@@ -1,3 +1,9 @@
+:root {
+    --foreground-color-dark: #171717;
+    --foreground-color-hover-dark: rgb(49, 46, 129, 0.75);
+    --text-color-hover: rgb(165, 180, 252);
+    --text-color: rgb(255, 255, 255);
+}
 .navbar-container {
     height: 100vh;
     width: 20vw;
@@ -12,7 +18,7 @@
 }
 .main-logo h3 {
     font-size: 2rem;
-    color: rgb(255, 255, 255);
+    color: var(--text-color);
     margin: 2rem 0.5rem;
 
     background-image: linear-gradient(
@@ -36,7 +42,7 @@
 }
 .navBar-links p {
     width: 100%;
-    background-color: #171717;
+    background-color: var(--foreground-color-dark);
     padding: 0.7rem;
     border-radius: 10px;
     /* border: 1px solid #898989; */
@@ -57,8 +63,8 @@
     margin-right: 0.5rem;
 }
 .navBar-links p:hover {
-    background-color: rgb(49, 46, 129, 0.75);
-    color: rgb(165, 180, 252);
+    background-color: var(--foreground-color-hover-dark);
+    color: var(--text-color-hover);
 }
 .navBar-social {
     margin: 0 1rem;
@@ -79,7 +85,10 @@
     transition: all 0.3s linear;
 }
 .navBar-social p a:hover {
-    color: rgb(165, 180, 252);
+    color: var(--text-color-hover);
+}
+.navBar-chip-countries {
+    margin-top: 2rem;
 }
 .navBar-chips {
     display: flex;
@@ -87,9 +96,9 @@
     margin: 0.5rem;
 }
 
-.country-chip:hover {
-    background-color: rgb(49, 46, 129, 0.75);
-    color: rgb(165, 180, 252);
+.chip:hover{
+    background-color: var(--foreground-color-hover-dark);
+    color: var(--text-color-hover);
 }
 
 /* ! For responsive menu bar */

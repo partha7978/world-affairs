@@ -7,11 +7,12 @@ import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
 
 export default function NavBar() {
-  let navBarElementStyle = {
+  let chipStyle = {
     backgroundColor: '#171717',
     color: '#ffffff',
     margin: 0.5,
-    cursor: 'pointer'
+    cursor: 'pointer',
+    transition: 'all 0.3s linear'
   }
   return (
     <div className="navbar-container">
@@ -31,14 +32,13 @@ export default function NavBar() {
               <span>Filter by countries</span>
               <Divider sx={{backgroundColor: '#ffffff'}}/>
               <div className="navBar-chips">
-                <Chip sx={navBarElementStyle} label="USA" />
-                <Chip sx={navBarElementStyle} label="France" />
-                <Chip sx={navBarElementStyle} label="Germany" />
-                <Chip sx={navBarElementStyle} label="China" />
-                <Chip sx={navBarElementStyle} label="Russia" />
-                <Chip sx={navBarElementStyle} label="Japan" />
-                <Chip sx={navBarElementStyle} label="Australia" />
-                <Chip sx={navBarElementStyle} label="United Kingdom" />
+                <Chip sx={chipStyle} className="chip" label="USA" />
+                <Chip sx={chipStyle} className="chip" label="Germany" />
+                <Chip sx={chipStyle} className="chip" label="China" />
+                <Chip sx={chipStyle} className="chip" label="Russia" />
+                <Chip sx={chipStyle} className="chip" label="Japan" />
+                <Chip sx={chipStyle} className="chip" label="Australia" />
+                <Chip sx={chipStyle} className="chip" label="United Kingdom" />
               </div>
             </div>
         </div>
