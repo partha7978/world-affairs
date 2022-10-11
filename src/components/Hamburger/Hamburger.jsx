@@ -6,6 +6,11 @@ import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
+import indiaLogo from '../../assets/image/india.webp'
+import worldLogo from '../../assets/image/world.webp'
+import homeImage from '../../assets/image/house.webp'
+import Chip from '@mui/material/Chip';
+import './Hamburger.css'
 
 
 export default function Hamburger() {
@@ -30,7 +35,7 @@ export default function Hamburger() {
     
       const list = (anchor) => (
         <Box
-          sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+          sx={{backgroundColor: '#000000', width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
           role="presentation"
           onClick={toggleDrawer(anchor, false)}
           onKeyDown={toggleDrawer(anchor, false)}
@@ -39,10 +44,15 @@ export default function Hamburger() {
         //   alignItems="center"
         //   flexDirection="column"
         >
-          <List>
-            <ListItemButton>
-                <ListItemText primary={'Top Headlines'} />
-            </ListItemButton>
+          <List className="hamBurger-list">
+            <p><img src={homeImage} alt="home logo" />Home</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+              </svg>
+              Top Headlines
+            </p>
+            <p><img src={indiaLogo} alt="india logo" />India</p>
+            <p><img src={worldLogo} alt="world logo" />World</p>
           </List>
           <Divider />
           <List>
