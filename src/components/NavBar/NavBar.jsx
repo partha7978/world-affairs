@@ -2,9 +2,17 @@ import React from 'react'
 import './NavBar.css'
 import indiaLogo from '../../assets/image/india.webp'
 import worldLogo from '../../assets/image/world.webp'
+import usaLogo from '../../assets/image/usa.webp'
+import germanyLogo from '../../assets/image/germany.webp'
+import chinaLogo from '../../assets/image/china.webp'
+import russiaLogo from '../../assets/image/russia.webp'
+import japanLogo from '../../assets/image/japan.webp'
+import australiaLogo from '../../assets/image/australia.webp'
+import unitedKingdomLogo from '../../assets/image/unitedKingdom.webp'
 import homeImage from '../../assets/image/house.webp'
 import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
+import Avatar from '@mui/material/Avatar';
 
 export default function NavBar() {
   let chipStyle = {
@@ -32,13 +40,13 @@ export default function NavBar() {
               <span>Filter by countries</span>
               <Divider sx={{backgroundColor: '#ffffff'}}/>
               <div className="navBar-chips">
-                <Chip sx={chipStyle} className="chip" label="USA" />
-                <Chip sx={chipStyle} className="chip" label="Germany" />
-                <Chip sx={chipStyle} className="chip" label="China" />
-                <Chip sx={chipStyle} className="chip" label="Russia" />
-                <Chip sx={chipStyle} className="chip" label="Japan" />
-                <Chip sx={chipStyle} className="chip" label="Australia" />
-                <Chip sx={chipStyle} className="chip" label="United Kingdom" />
+                <Chip sx={chipStyle} className="chip" label="USA" avatar={<Avatar alt="usaLogo" src={usaLogo} />} />
+                <Chip sx={chipStyle} className="chip" label="Germany" avatar={<Avatar alt="germanyLogo" src={germanyLogo} />} />
+                <Chip sx={chipStyle} className="chip" label="China" avatar={<Avatar alt="chinaLogo" src={chinaLogo} />} />
+                <Chip sx={chipStyle} className="chip" label="Russia" avatar={<Avatar alt="russiaLogo" src={russiaLogo} />} />
+                <Chip sx={chipStyle} className="chip" label="Japan" avatar={<Avatar alt="japanLogo" src={japanLogo} />} />
+                <Chip sx={chipStyle} className="chip" label="Australia" avatar={<Avatar alt="australiaLogo" src={australiaLogo} />} />
+                <Chip sx={chipStyle} className="chip" label="United Kingdom" avatar={<Avatar alt="unitedKingdomLogo" src={unitedKingdomLogo} />} />
               </div>
             </div>
         </div>
