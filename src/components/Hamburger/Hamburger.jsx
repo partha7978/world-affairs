@@ -10,10 +10,25 @@ import indiaLogo from '../../assets/image/india.webp'
 import worldLogo from '../../assets/image/world.webp'
 import homeImage from '../../assets/image/house.webp'
 import Chip from '@mui/material/Chip';
+import Avatar from '@mui/material/Avatar';
 import './Hamburger.css'
+import usaLogo from '../../assets/image/usa.webp'
+import germanyLogo from '../../assets/image/germany.webp'
+import chinaLogo from '../../assets/image/china.webp'
+import russiaLogo from '../../assets/image/russia.webp'
+import japanLogo from '../../assets/image/japan.webp'
+import australiaLogo from '../../assets/image/australia.webp'
+import unitedKingdomLogo from '../../assets/image/unitedKingdom.webp'
 
 
 export default function Hamburger() {
+  let chipStyle = {
+    backgroundColor: '#171717',
+    color: '#ffffff',
+    margin: 0.5,
+    cursor: 'pointer',
+    transition: 'all 0.3s linear'
+  }
     const [state, setState] = React.useState({
         top: false,
         left: false,
@@ -54,15 +69,20 @@ export default function Hamburger() {
             <p><img src={indiaLogo} alt="india logo" />India</p>
             <p><img src={worldLogo} alt="world logo" />World</p>
           </List>
-          <Divider />
           <List>
-            {['India', 'World', 'Spam'].map((text, index) => (
-              <ListItem key={text} disablePadding>
-                <ListItemButton>
-                  <ListItemText primary={text} />
-                </ListItemButton>
-              </ListItem>
-            ))}
+          <div className="hamburger-chip-countries">
+              <span>Filter by countries</span>
+              <Divider sx={{backgroundColor: '#ffffff'}}/>
+              <div className="hamburger-chips">
+                <Chip sx={chipStyle} className="chip" label="USA" avatar={<Avatar alt="usaLogo" src={usaLogo} />} />
+                <Chip sx={chipStyle} className="chip" label="Germany" avatar={<Avatar alt="germanyLogo" src={germanyLogo} />} />
+                <Chip sx={chipStyle} className="chip" label="China" avatar={<Avatar alt="chinaLogo" src={chinaLogo} />} />
+                <Chip sx={chipStyle} className="chip" label="Russia" avatar={<Avatar alt="russiaLogo" src={russiaLogo} />} />
+                <Chip sx={chipStyle} className="chip" label="Japan" avatar={<Avatar alt="japanLogo" src={japanLogo} />} />
+                <Chip sx={chipStyle} className="chip" label="Australia" avatar={<Avatar alt="australiaLogo" src={australiaLogo} />} />
+                <Chip sx={chipStyle} className="chip" label="United Kingdom" avatar={<Avatar alt="unitedKingdomLogo" src={unitedKingdomLogo} />} />
+              </div>
+            </div>
           </List>
         </Box>
       );

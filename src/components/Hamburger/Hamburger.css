@@ -27,3 +27,12 @@
     width: 1rem;
     margin-right: 0.5rem;
 }
+.hamburger-chip-countries {
+    margin: 0.5rem 1rem;
+}
+.hamburger-chip-countries span {
+    color: var(--text-color);
+}
+.hamburger-chips {
+    margin-top: 0.8rem;
+}
