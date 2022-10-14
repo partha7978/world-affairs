@@ -1,7 +1,31 @@
+:root {
+    --foreground-color-dark: #171717;
+    --foreground-color-hover-dark: rgb(49, 46, 129, 0.75);
+    --text-color-hover: rgb(165, 180, 252);
+    --text-color: rgb(255, 255, 255);
+}
 .shareIcon {
     height: 1rem;
     width: 1rem;
     margin: 0 8px;
     margin-left: auto;
     cursor: pointer;
+}
+.hamburger-social {
+    text-align: center;
+}
+.hamburger-social p {
+    font-size: 1rem;
+    color: rgb(72, 72, 72);
+    margin-bottom: 0.2rem;
+    letter-spacing: 1px;
+}
+.hamburger-social p a {
+    color: rgb(72, 72, 72);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s linear;
+}
+.hamburger-social p a:hover {
+    color: var(--text-color-hover);
 }

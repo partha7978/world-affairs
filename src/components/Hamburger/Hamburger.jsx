@@ -81,7 +81,7 @@ export default function Hamburger() {
               </div>
             </div>
           </List>
-          <List>
+          <List sx={{paddingBottom:0}}>
             <div className="hamburger-social">
               <p>Developed by <a href="http://">Partha</a></p>
             </div>
