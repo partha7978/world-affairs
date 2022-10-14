@@ -3,9 +3,6 @@ import Box from '@mui/material/Box';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
 import indiaLogo from '../../assets/image/india.webp'
 import worldLogo from '../../assets/image/world.webp'
 import homeImage from '../../assets/image/house.webp'
@@ -70,7 +67,7 @@ export default function Hamburger() {
             <p><img src={worldLogo} alt="world logo" />World</p>
           </List>
           <List>
-          <div className="hamburger-chip-countries">
+            <div className="hamburger-chip-countries">
               <span>Filter by countries</span>
               <Divider sx={{backgroundColor: '#ffffff'}}/>
               <div className="hamburger-chips">
@@ -82,6 +79,11 @@ export default function Hamburger() {
                 <Chip sx={chipStyle} className="chip" label="Australia" avatar={<Avatar alt="australiaLogo" src={australiaLogo} />} />
                 <Chip sx={chipStyle} className="chip" label="United Kingdom" avatar={<Avatar alt="unitedKingdomLogo" src={unitedKingdomLogo} />} />
               </div>
+            </div>
+          </List>
+          <List>
+            <div className="hamburger-social">
+              <p>Developed by <a href="http://">Partha</a></p>
             </div>
           </List>
         </Box>
