@@ -17,6 +17,10 @@
     justify-content: center;
     margin: 0.7rem 1rem;
 }
+.hamBurger-list p:hover {
+    background-color: var(--foreground-color-hover-dark);
+    color: var(--text-color-hover);
+}
 .hamBurger-list p svg {
     height: 1rem;
     width: 1rem;

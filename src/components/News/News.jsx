@@ -10,9 +10,9 @@ export default function News() {
           <div className="main-logo">
               <h3>World Affairs</h3>
           </div>
-          <p class="hamburger">
+          <div className="hamburger">
             <Hamburger />
-          </p>
+          </div>
         </div>
         <div className="news-main-container">
           <div className="news-section">
