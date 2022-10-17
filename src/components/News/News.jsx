@@ -36,9 +36,9 @@ export class News extends Component {
             <div className="news-section">
               <h2>Top Headlines - India</h2>
               <div className="news-cards">
-                {this.state.articles.map((element) => {
-                  return <NewsCard title={element.title} description={element.description} source={element.source.name} url={element.url} imageUrl={element.urlToImage}/>
-                })}
+              {this.state.articles.map((element) => {
+                return <NewsCard title={element.title} description={element.description?element.description.slice(0, 88):""} imageUrl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name} />    
+              })}
               </div>
             </div>
           </div>
