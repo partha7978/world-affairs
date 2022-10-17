@@ -14,6 +14,13 @@ export class News extends Component {
       page: 1
     }
   }
+  async componentDidMount() {
+    let url =  "https://newsapi.org/v2/top-headlines?country=in&apiKey=64cbaea366774d079c4d4318a36066a7&page=1&pagesoze=20";
+    let data = await fetch(url);
+    let parsedData = await data.json();
+    console.log(parsedData);
+    this.setState({articles:parsedData.articles, totalArticles: parsedData.totalResults});
+  }
   render() {
     return (
       <div className="news-container">
@@ -29,18 +36,9 @@ export class News extends Component {
             <div className="news-section">
               <h2>Top Headlines - India</h2>
               <div className="news-cards">
-                <NewsCard />
-                <NewsCard />
-                <NewsCard />
-                <NewsCard />
-                <NewsCard />
-                <NewsCard />
-                <NewsCard />
-                <NewsCard />
-                <NewsCard />
-                <NewsCard />
-                <NewsCard />
-                <NewsCard />
+                {this.state.articles.map((element) => {
+                  return <NewsCard title={element.title} description={element.description} source={element.source.name} url={element.url} imageUrl={element.urlToImage}/>
+                })}
               </div>
             </div>
           </div>
