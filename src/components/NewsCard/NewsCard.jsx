@@ -6,7 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 
-export default function NewsCard({title, description, imageUrl, newsUrl, author, date, source}) {
+export default function NewsCard({title, description, imageUrl, newsUrl, author, date, source, times}) {
   return (
     <Card sx={{ maxWidth: 280 , borderRadius: '10px'}}>
         <CardActionArea>
@@ -15,15 +15,15 @@ export default function NewsCard({title, description, imageUrl, newsUrl, author,
             component="img"
             height="140"
             image={imageUrl}
-            alt="green iguana"
+            alt="No image found"
             />
             <CardContent sx={{paddingBottom: 1.2}}>
              <h5 className="title">{title}</h5>
               <Typography variant="body2" color="text.secondary">
                   {description}
               </Typography>
-              <Typography variant="body2" color="text.secondary" sx={{marginTop: '1rem', fontSize: '0.7rem'}}>
-                Source: {source}
+              <Typography variant="body2" color="text.secondary" sx={{marginTop: '0.5rem', fontSize: '0.7rem'}}>
+                Source: {source} | {times.split('T')[0]} : {times.split('T')[1].split('Z')[0]}
               </Typography>
             </CardContent>
         </CardActionArea>
