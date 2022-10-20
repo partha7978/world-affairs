@@ -20,7 +20,7 @@ export default function NewsCard({title, description, imageUrl, newsUrl, author,
             <CardContent sx={{paddingBottom: 1.2}}>
              <h5 className="title">{title}</h5>
               <Typography variant="body2" color="text.secondary">
-                  {description}
+                {description}
               </Typography>
               <Typography variant="body2" color="text.secondary" sx={{marginTop: '0.5rem', fontSize: '0.7rem'}}>
                 Source: {source} | {times.split('T')[0]} : {times.split('T')[1].split('Z')[0]}
