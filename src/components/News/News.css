@@ -4,6 +4,13 @@
     --text-color-hover: rgb(165, 180, 252);
     --text-color: rgb(255, 255, 255);
 }
+.container-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: rgb(255, 255, 255);
+}
 .news-container {
     height: 100vh;
     width: 80vw;

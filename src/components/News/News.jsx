@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Hamburger from '../Hamburger/Hamburger'
+import NavBar from '../NavBar/NavBar';
 import NewsCard from '../NewsCard/NewsCard'
 import './News.css'
 
@@ -23,7 +24,10 @@ export class News extends Component {
   }
   render() {
     return (
-      <div className="news-container">
+      <div className="container-parent">
+          <NavBar />
+
+          <div className="news-container">
           <div className="news-navBar">
             <div className="main-logo">
                 <h3>World Affairs</h3>
@@ -55,6 +59,8 @@ export class News extends Component {
             </div>
           </div>
       </div>
+      </div>
+      
     )
   }
   
