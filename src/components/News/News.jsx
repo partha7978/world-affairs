@@ -16,8 +16,7 @@ export class News extends Component {
         };
     }
     async componentDidMount() {
-        let url =
-            "https://newsapi.org/v2/top-headlines?country=in&apiKey=64cbaea366774d079c4d4318a36066a7&page=1&pagesize=20";
+        let url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=64cbaea366774d079c4d4318a36066a7&page=1&pagesize=20";
         let data = await fetch(url);
         let parsedData = await data.json();
         console.log(parsedData);
@@ -37,18 +36,22 @@ export class News extends Component {
             articles: parsedData.articles,
             page: this.state.page - 1
         })
-        React.useEffect(() => {window.scrollTo(0, 0);}, []);
     }
     handleNextPage = async () => {
-        console.log("Previous btn clicked");
-        let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=64cbaea366774d079c4d4318a36066a7&page=${this.state.page + 1}&pagesize=20`;
-        let data = await fetch(url);
-        let parsedData = await data.json();
-        this.setState({
-            articles: parsedData.articles,
-            page: this.state.page + 1
-        })
-        React.useEffect(() => {window.scrollTo(0, 0);}, []);
+        if(   this.state.page + 1 > Math.ceil(this.state.totalArticles / 20)) {
+
+        }
+        else 
+        {
+            console.log("Next btn clicked");
+            let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=64cbaea366774d079c4d4318a36066a7&page=${this.state.page + 1}&pagesize=20`;
+            let data = await fetch(url);
+            let parsedData = await data.json();
+            this.setState({
+                articles: parsedData.articles,
+                page: this.state.page + 1
+            })
+        }
     }
     render() {
         return (
@@ -109,13 +112,13 @@ export class News extends Component {
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
                                         viewBox="0 0 24 24"
-                                        stroke-width="1.5"
+                                        strokeWidth="1.5"
                                         stroke="currentColor"
-                                        class="w-6 h-6"
+                                        className="w-6 h-6"
                                     >
                                         <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
                                             d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
                                         />
                                     </svg>
