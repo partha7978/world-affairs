@@ -3,8 +3,13 @@ import Hamburger from "../Hamburger/Hamburger";
 import NavBar from "../NavBar/NavBar";
 import NewsCard from "../NewsCard/NewsCard";
 import "./News.css";
+import Snackbar from "@mui/material/Snackbar";
+import Fade from "@mui/material/Fade";
+
+
 
 export class News extends Component {
+
     constructor() {
         super();
         console.log("Constructor from News Component");
@@ -13,10 +18,17 @@ export class News extends Component {
             articles: [],
             loading: false,
             page: 1,
+            //todo: State for snackBar
+            open: false,
+            Transition: Fade,
+            alertMsg: ""
         };
     }
+    
+
     async componentDidMount() {
-        let url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=64cbaea366774d079c4d4318a36066a7&page=1&pagesize=20";
+        let url =
+            "https://newsapi.org/v2/top-headlines?country=in&apiKey=64cbaea366774d079c4d4318a36066a7&page=1&pagesize=20";
         let data = await fetch(url);
         let parsedData = await data.json();
         console.log(parsedData);
@@ -28,34 +40,46 @@ export class News extends Component {
 
     // todo: for handling previous and next page operations
     handlePreviousPage = async () => {
-        console.log("Previous btn clicked");
-        let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=64cbaea366774d079c4d4318a36066a7&page=${this.state.page - 1}&pagesize=20`;
-        let data = await fetch(url);
-        let parsedData = await data.json();
-        this.setState({
-            articles: parsedData.articles,
-            page: this.state.page - 1
-        })
-    }
-    handleNextPage = async () => {
-        if(   this.state.page + 1 > Math.ceil(this.state.totalArticles / 20)) {
-
-        }
-        else 
-        {
-            console.log("Next btn clicked");
-            let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=64cbaea366774d079c4d4318a36066a7&page=${this.state.page + 1}&pagesize=20`;
+        if (this.state.page - 1 < 0) {
+        } else {
+            console.log("Previous btn clicked");
+            let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=64cbaea366774d079c4d4318a36066a7&page=${
+                this.state.page - 1
+            }&pagesize=20`;
             let data = await fetch(url);
             let parsedData = await data.json();
             this.setState({
                 articles: parsedData.articles,
-                page: this.state.page + 1
-            })
+                page: this.state.page - 1,
+            });
+          
         }
-    }
+    };
+    handleNextPage = async () => {
+        if (this.state.page + 1 > Math.ceil(this.state.totalArticles / 20)) {
+        } else {
+            console.log("Next btn clicked");
+            let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=64cbaea366774d079c4d4318a36066a7&page=${
+                this.state.page + 1
+            }&pagesize=20`;
+            let data = await fetch(url);
+            let parsedData = await data.json();
+            this.setState({
+                articles: parsedData.articles,
+                page: this.state.page + 1,
+            });
+        }
+    };
     render() {
         return (
             <div className="container-parent">
+                <Snackbar
+                    open={this.state.open}
+                    autoHideDuration={6000} // for how long the snackbar will be visible
+                    TransitionComponent={this.state.Transition}
+                    message={this.state.alertMsg}
+                    key={this.state.Transition.name}
+                />
                 <NavBar />
                 <div className="news-container">
                     <div className="news-navBar">
@@ -91,7 +115,10 @@ export class News extends Component {
                                 })}
                             </div>
                             <div className="news-pagination">
-                                <button className="news-pagination-btn" onClick={this.handlePreviousPage}>
+                                <button
+                                    className="news-pagination-btn"
+                                    onClick={this.handlePreviousPage}
+                                >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -107,7 +134,10 @@ export class News extends Component {
                                         />
                                     </svg>
                                 </button>
-                                <button className="news-pagination-btn" onClick={this.handleNextPage}>
+                                <button
+                                    className="news-pagination-btn"
+                                    onClick={this.handleNextPage}
+                                >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
