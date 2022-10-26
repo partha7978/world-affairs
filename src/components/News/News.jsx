@@ -5,6 +5,7 @@ import NewsCard from "../NewsCard/NewsCard";
 import "./News.css";
 import Snackbar from "@mui/material/Snackbar";
 import Fade from "@mui/material/Fade";
+import Carousel from "../Carousel/Carousel";
 
 
 
@@ -106,6 +107,9 @@ export class News extends Component {
                     </div>
                     <div className="news-main-container">
                         <div className="news-section">
+                            {/* for carousel section */}
+                            <Carousel />
+                            {/* for main news cards */}
                             <h2>Top Headlines - India</h2>
                             <div className="news-cards">
                                 {this.state.articles.map((element) => {
