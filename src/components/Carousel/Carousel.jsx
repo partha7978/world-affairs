@@ -55,7 +55,16 @@ export default function Carousel() {
                         <img alt="img" src={images[0]} />
                     </div>
                     <div className="news-text">
-                        <h4 className="news-title">"T20 World Cup, India vs Netherlands, Super 12, Group 2 Live Updates: Virat Kohli, Rohit Sharma and Suryakumar Yadav guided India to 179/2 in 20 overs against Netherlands in Group 2 Super 12 match of … [+622 chars]"</h4>
+                        <h4 className="news-title">
+                            "T20 World Cup, India vs Netherlands, Super 12,
+                            Group 2 Live Updates: Virat Kohli, Rohit Sharma and
+                            Suryakumar Yadav guided India to 179/2 in 20 overs
+                            against Netherlands in Group 2 Super 12 match of …
+                            [+622 chars]"
+                        </h4>
+                        <div className="btn-read">
+                            <button>Read More</button>
+                        </div>
                     </div>
                 </div>
                 <div className="each-slide">
@@ -63,7 +72,16 @@ export default function Carousel() {
                         <img alt="img" src={images[0]} />
                     </div>
                     <div className="news-text">
-                        <h4 className="news-title">"T20 World Cup, India vs Netherlands, Super 12, Group 2 Live Updates: Virat Kohli, Rohit Sharma and Suryakumar Yadav guided India to 179/2 in 20 overs against Netherlands in Group 2 Super 12 match of … [+622 chars]"</h4>
+                        <h4 className="news-title">
+                            "T20 World Cup, India vs Netherlands, Super 12,
+                            Group 2 Live Updates: Virat Kohli, Rohit Sharma and
+                            Suryakumar Yadav guided India to 179/2 in 20 overs
+                            against Netherlands in Group 2 Super 12 match of …
+                            [+622 chars]"
+                        </h4>
+                        <div className="btn-read">
+                            <button>Read More</button>
+                        </div>
                     </div>
                 </div>
                 <div className="each-slide">
@@ -71,10 +89,18 @@ export default function Carousel() {
                         <img alt="img" src={images[0]} />
                     </div>
                     <div className="news-text">
-                        <h4 className="news-title">"T20 World Cup, India vs Netherlands, Super 12, Group 2 Live Updates: Virat Kohli, Rohit Sharma and Suryakumar Yadav guided India to 179/2 in 20 overs against Netherlands in Group 2 Super 12 match of … [+622 chars]"</h4>
+                        <h4 className="news-title">
+                            "T20 World Cup, India vs Netherlands, Super 12,
+                            Group 2 Live Updates: Virat Kohli, Rohit Sharma and
+                            Suryakumar Yadav guided India to 179/2 in 20 overs
+                            against Netherlands in Group 2 Super 12 match of …
+                            [+622 chars]"
+                        </h4>
+                        <div className="btn-read">
+                            <button>Read More</button>
+                        </div>
                     </div>
                 </div>
-
             </Fade>
         </div>
     );
