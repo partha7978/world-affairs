@@ -49,12 +49,12 @@
 .each-slide > .news-text > .news-title {
     font-size: 1.5rem;
     font-weight: 500;
-   margin: 1rem;
+   margin: 0.2rem 1rem;
 }
 .each-slide > .news-text > .btn-read {
     width: 100%;
     height: auto;
-    padding: 1rem;
+    padding: 0.2rem 1rem;
     display: flex;
     justify-content: left;
     align-items: center;
@@ -69,4 +69,7 @@
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     margin: 1rem;
+}
+.each-slide > .news-text > .btn-read > button:hover {
+   transform: translateY(-3px);
 }
