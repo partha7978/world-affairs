@@ -44,3 +44,10 @@
 .arrow-btn:hover {
     background: rgba(0, 0, 0, 0.3);
 }
+
+/* carousel text part starts */
+.each-slide > .news-text > .news-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+   margin: 1rem;
+}

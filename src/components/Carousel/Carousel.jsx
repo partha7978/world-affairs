@@ -16,13 +16,13 @@ export default function Carousel() {
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     stroke="currentColor"
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                 >
                     <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         d="M15.75 19.5L8.25 12l7.5-7.5"
                     />
                 </svg>
@@ -34,13 +34,13 @@ export default function Carousel() {
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     stroke="currentColor"
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                 >
                     <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         d="M8.25 4.5l7.5 7.5-7.5 7.5"
                     />
                 </svg>
@@ -55,37 +55,26 @@ export default function Carousel() {
                         <img alt="img" src={images[0]} />
                     </div>
                     <div className="news-text">
-                        <h1>News 1</h1>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Quisquam, quae.
-                        </p>
+                        <h4 className="news-title">"T20 World Cup, India vs Netherlands, Super 12, Group 2 Live Updates: Virat Kohli, Rohit Sharma and Suryakumar Yadav guided India to 179/2 in 20 overs against Netherlands in Group 2 Super 12 match of … [+622 chars]"</h4>
                     </div>
                 </div>
                 <div className="each-slide">
-                    <div>
-                        <img alt="img" src={images[1]} />
+                    <div className="news-img">
+                        <img alt="img" src={images[0]} />
                     </div>
                     <div className="news-text">
-                        <h1>News 1</h1>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Quisquam, quae.
-                        </p>
+                        <h4 className="news-title">"T20 World Cup, India vs Netherlands, Super 12, Group 2 Live Updates: Virat Kohli, Rohit Sharma and Suryakumar Yadav guided India to 179/2 in 20 overs against Netherlands in Group 2 Super 12 match of … [+622 chars]"</h4>
                     </div>
                 </div>
                 <div className="each-slide">
-                    <div>
-                        <img alt="img" src={images[2]} />
+                    <div className="news-img">
+                        <img alt="img" src={images[0]} />
                     </div>
                     <div className="news-text">
-                        <h1>News 1</h1>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Quisquam, quae.
-                        </p>
+                        <h4 className="news-title">"T20 World Cup, India vs Netherlands, Super 12, Group 2 Live Updates: Virat Kohli, Rohit Sharma and Suryakumar Yadav guided India to 179/2 in 20 overs against Netherlands in Group 2 Super 12 match of … [+622 chars]"</h4>
                     </div>
                 </div>
+
             </Fade>
         </div>
     );
