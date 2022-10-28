@@ -3,7 +3,7 @@ import { Fade } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import "./Carousel.css";
 
-export default function Carousel() {
+export default function Carousel({ articles }) {
     const images = [
         "https://images.unsplash.com/photo-1509721434272-b79147e0e708?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
         "https://images.unsplash.com/photo-1506710507565-203b9f24669b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1536&q=80",
@@ -50,57 +50,25 @@ export default function Carousel() {
     return (
         <div>
             <Fade {...nav_btn_arrow_styles}>
-                <div className="each-slide">
-                    <div className="news-img">
-                        <img alt="img" src={images[0]} />
-                    </div>
-                    <div className="news-text">
-                        <h4 className="news-title">
-                            "T20 World Cup, India vs Netherlands, Super 12,
-                            Group 2 Live Updates: Virat Kohli, Rohit Sharma and
-                            Suryakumar Yadav guided India to 179/2 in 20 overs
-                            against Netherlands in Group 2 Super 12 match of …
-                            [+622 chars]"
-                        </h4>
-                        <div className="btn-read">
-                            <button>Read More</button>
-                        </div>
-                    </div>
-                </div>
-                <div className="each-slide">
-                    <div className="news-img">
-                        <img alt="img" src={images[0]} />
-                    </div>
-                    <div className="news-text">
-                        <h4 className="news-title">
-                            "T20 World Cup, India vs Netherlands, Super 12,
-                            Group 2 Live Updates: Virat Kohli, Rohit Sharma and
-                            Suryakumar Yadav guided India to 179/2 in 20 overs
-                            against Netherlands in Group 2 Super 12 match of …
-                            [+622 chars]"
-                        </h4>
-                        <div className="btn-read">
-                            <button>Read More</button>
-                        </div>
-                    </div>
-                </div>
-                <div className="each-slide">
-                    <div className="news-img">
-                        <img alt="img" src={images[0]} />
-                    </div>
-                    <div className="news-text">
-                        <h4 className="news-title">
-                            "T20 World Cup, India vs Netherlands, Super 12,
-                            Group 2 Live Updates: Virat Kohli, Rohit Sharma and
-                            Suryakumar Yadav guided India to 179/2 in 20 overs
-                            against Netherlands in Group 2 Super 12 match of …
-                            [+622 chars]"
-                        </h4>
-                        <div className="btn-read">
-                            <button>Read More</button>
-                        </div>
-                    </div>
-                </div>
+                {articles
+                    .filter((article) => article.urlToImage !== null)
+                    .map((element) => {
+                        return (
+                            <div className="each-slide" key={element.url}>
+                                <div className="news-img">
+                                    <img alt="img" src={element.urlToImage} />
+                                </div>
+                                <div className="news-text">
+                                    <h4 className="news-title">
+                                        {element.title}
+                                    </h4>
+                                    <div className="btn-read">
+                                        <button>Read More</button>
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    })}
             </Fade>
         </div>
     );

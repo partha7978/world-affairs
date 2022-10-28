@@ -37,6 +37,7 @@ export class News extends Component {
             articles: parsedData.articles,
             totalArticles: parsedData.totalResults,
         });
+        console.log(this.state.articles);
     }
 
     // todo: for handling previous and next page operations
@@ -102,13 +103,13 @@ export class News extends Component {
                             <h3>World Affairs</h3>
                         </div>
                         <div className="hamburger">
-                            <Hamburger />
+                            <Hamburger/>
                         </div>
                     </div>
                     <div className="news-main-container">
                         <div className="news-section">
                             {/* for carousel section */}
-                            <Carousel />
+                            <Carousel {...this.state}/>
                             {/* for main news cards */}
                             <h2>Top Headlines - India</h2>
                             <div className="news-cards">
