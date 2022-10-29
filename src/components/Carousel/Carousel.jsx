@@ -56,11 +56,11 @@ export default function Carousel({ articles }) {
                         return (
                             <div className="each-slide" key={element.url}>
                                 <div className="news-img">
-                                    <img alt="img" src={element.urlToImage} />
+                                    <img alt="img" src={element.urlToImage}/>
                                 </div>
                                 <div className="news-text">
                                     <h4 className="news-title">
-                                        {element.title}
+                                        {element.title.split('-')[0]}
                                     </h4>
                                     <div className="btn-read">
                                         <button>Read More</button>

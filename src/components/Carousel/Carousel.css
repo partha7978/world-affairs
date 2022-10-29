@@ -47,9 +47,11 @@
 
 /* carousel text part starts */
 .each-slide > .news-text > .news-title {
+    width: 100%;
     font-size: 1.5rem;
     font-weight: 500;
-   margin: 0.2rem 1rem;
+    padding: 0.2rem 1rem;
+    padding-left: 3rem !important;
 }
 .each-slide > .news-text > .btn-read {
     width: 100%;
@@ -60,7 +62,7 @@
     align-items: center;
 }
 .each-slide > .news-text > .btn-read > button {
-   padding: 10px 30px;
+    padding: 10px 30px;
     background: #fff;
     color: #000;
     border: 0;
@@ -69,6 +71,7 @@
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     margin: 1rem;
+    border-radius: 3px;
 }
 .each-slide > .news-text > .btn-read > button:hover {
    transform: translateY(-3px);
