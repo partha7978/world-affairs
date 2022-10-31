@@ -25,16 +25,16 @@
 .main-logo h3 {
     font-size: 2rem;
     color: var(--text-color-light);
-    margin: 2rem 0.5rem;
+    margin: 1rem 0.5rem;
 
-    /* background-image: linear-gradient(
+    background-image: linear-gradient(
         to right,
-        rgb(132, 151, 255),
-        rgb(255, 138, 192) 50%,
-        rgb(254, 173, 173) 50%
+        #5F0A87,
+        #A4508B 50%,
+        #A4508B 50%
     );
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
+    -webkit-text-fill-color: transparent;
 }
 
 .navBar-links {

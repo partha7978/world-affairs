@@ -61,7 +61,10 @@
     justify-content: left;
     align-items: center;
 }
-.each-slide > .news-text > .btn-read > button {
+.each-slide > .news-text > .btn-read > a {
+    text-decoration: none;
+}
+.each-slide > .news-text > .btn-read > a > button {
     padding: 10px 30px;
     background: #fff;
     color: #000;
@@ -73,6 +76,6 @@
     margin: 1rem;
     border-radius: 3px;
 }
-.each-slide > .news-text > .btn-read > button:hover {
+.each-slide > .news-text > .btn-read > a > button:hover {
    transform: translateY(-3px);
 }
