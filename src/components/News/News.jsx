@@ -29,7 +29,7 @@ export class News extends Component {
 
     async componentDidMount() {
         let url =
-            "https://newsapi.org/v2/top-headlines?country=in&apiKey=64cbaea366774d079c4d4318a36066a7&page=1&pagesize=20";
+            "https://newsapi.org/v2/top-headlines?country=in&apiKey=64cbaea366774d079c4d4318a36066a7&page=1&pageSize=20";
         let data = await fetch(url);
         let parsedData = await data.json();
         console.log(parsedData);
@@ -52,16 +52,17 @@ export class News extends Component {
             }, 1500)
         } else {
             console.log("Previous btn clicked");
+           
             let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=64cbaea366774d079c4d4318a36066a7&page=${
                 this.state.page - 1
-            }&pagesize=20`;
+            }&pageSize=20`;
             let data = await fetch(url);
             let parsedData = await data.json();
+            document.getElementById('news-section').scrollTo({top: 0, behavior: 'smooth'});
             this.setState({
                 articles: parsedData.articles,
                 page: this.state.page - 1,
             });
-          
         }
     };
     handleNextPage = async () => {
@@ -77,9 +78,10 @@ export class News extends Component {
             console.log("Next btn clicked");
             let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=64cbaea366774d079c4d4318a36066a7&page=${
                 this.state.page + 1
-            }&pagesize=20`;
+            }&pageSize=20`;
             let data = await fetch(url);
             let parsedData = await data.json();
+            document.getElementById('news-section').scrollTo({top: 0, behavior: 'smooth'});
             this.setState({
                 articles: parsedData.articles,
                 page: this.state.page + 1,
@@ -107,7 +109,7 @@ export class News extends Component {
                         </div>
                     </div>
                     <div className="news-main-container">
-                        <div className="news-section">
+                        <div className="news-section" id="news-section">
                             {/* for carousel section */}
                             <Carousel {...this.state}/>
                             {/* for main news cards */}
