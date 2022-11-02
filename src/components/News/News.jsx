@@ -25,7 +25,16 @@ export class News extends Component {
             alertMsg: ""
         };
     }
-    
+    // todo: for showing alert msg
+    showAlert = (msg) => {
+        this.setState({
+            open: true,
+            alertMsg: msg,
+        });
+        setTimeout(() => {
+            this.setState({ open: false });
+        }, 1500)
+    }
 
     async componentDidMount() {
         let url =
@@ -43,13 +52,7 @@ export class News extends Component {
     // todo: for handling previous and next page operations
     handlePreviousPage = async () => {
         if (this.state.page - 1 <= 0) {
-            this.setState({
-                open: true,
-                alertMsg: "No more pages to show",
-            });
-            setTimeout(() => {
-                this.setState({ open: false });
-            }, 1500)
+            this.showAlert("You are on the first page");
         } else {
             console.log("Previous btn clicked");
            
@@ -67,13 +70,7 @@ export class News extends Component {
     };
     handleNextPage = async () => {
         if (this.state.page + 1 > Math.ceil(this.state.totalArticles / 20)) {
-            this.setState({
-                open: true,
-                alertMsg: "No more pages to show",
-            });
-            setTimeout(() => {
-                this.setState({ open: false });
-            }, 1500)
+            this.showAlert("No more pages to show");
         } else {
             console.log("Next btn clicked");
             let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=64cbaea366774d079c4d4318a36066a7&page=${
