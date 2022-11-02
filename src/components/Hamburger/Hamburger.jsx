@@ -20,8 +20,6 @@ import unitedKingdomLogo from '../../assets/image/unitedKingdom.webp'
 
 export default function Hamburger() {
   let chipStyle = {
-    backgroundColor: '#171717',
-    color: '#ffffff',
     margin: 0.5,
     cursor: 'pointer',
     transition: 'all 0.3s linear'
@@ -47,7 +45,8 @@ export default function Hamburger() {
     
       const list = (anchor) => (
         <Box
-          sx={{backgroundColor: '#000000', width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+          className='hamburger-menu'
+          sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
           role="presentation"
           onClick={toggleDrawer(anchor, false)}
           onKeyDown={toggleDrawer(anchor, false)}
