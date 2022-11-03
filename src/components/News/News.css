@@ -55,15 +55,17 @@
 }
 .news-cards {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap;
     justify-content: space-around;
-    gap: 1.5rem;
+    gap: 1.5rem; */
     padding: 0 1rem;
-    /* width: 100%;
+
+    /* if below will not work properly then cmmt out below all and uncmment upper flex   and in newscard set the size from 100% to 23.3% */
+    /* width: 100%; */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    justify-content: center; */
+    gap: 1.2rem;
+    justify-content: center;
 }
 
 /* news pagination section */

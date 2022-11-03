@@ -41,10 +41,11 @@
 }
 
 .newsCard {
-    transition: all 0.2s ease-in !important;
-
+    transition: all 0.1s linear !important;
+    width: 100%;
+    border-radius: 10px !important;
+    /* background-image: linear-gradient(transparent 0%, rgba(16, 21, 53, 0.2) 25%, rgba(16, 21, 53, 0.75) 60%, rgb(16, 21, 53) 90%); */
 }
 .newsCard:hover {
-    transform: scale(1.02) !important;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2) !important;
+    transform: scale(1.03);
 }
