@@ -6,6 +6,7 @@ import "./News.css";
 import Snackbar from "@mui/material/Snackbar";
 import Fade from "@mui/material/Fade";
 import Carousel from "../Carousel/Carousel";
+import Category from "../Category/Category";
 
 
 
@@ -107,6 +108,11 @@ export class News extends Component {
                     </div>
                     <div className="news-main-container">
                         <div className="news-section" id="news-section">
+                            {/*  for News category section */}
+                            <Category />
+                            {/* for News category section */}
+
+
                             {/* for carousel section */}
                             <Carousel {...this.state}/>
                             {/* for main news cards */}
