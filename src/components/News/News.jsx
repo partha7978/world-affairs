@@ -38,6 +38,7 @@ export class News extends Component {
     }
 
     async componentDidMount() {
+        this.setState({ loading: true });
         let url =
             "https://newsapi.org/v2/top-headlines?country=in&apiKey=64cbaea366774d079c4d4318a36066a7&page=1&pageSize=20";
         let data = await fetch(url);
@@ -46,6 +47,7 @@ export class News extends Component {
         this.setState({
             articles: parsedData.articles,
             totalArticles: parsedData.totalResults,
+            loading: false,
         });
         console.log(this.state.articles);
     }
@@ -56,16 +58,17 @@ export class News extends Component {
             this.showAlert("You are on the first page");
         } else {
             console.log("Previous btn clicked");
-           
+            this.setState({ loading: true });
+            document.getElementById('news-section').scrollTo({top: 0, behavior: 'smooth'});
             let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=64cbaea366774d079c4d4318a36066a7&page=${
                 this.state.page - 1
             }&pageSize=20`;
             let data = await fetch(url);
             let parsedData = await data.json();
-            document.getElementById('news-section').scrollTo({top: 0, behavior: 'smooth'});
             this.setState({
                 articles: parsedData.articles,
                 page: this.state.page - 1,
+                loading: false,
             });
         }
     };
@@ -74,15 +77,17 @@ export class News extends Component {
             this.showAlert("No more pages to show");
         } else {
             console.log("Next btn clicked");
+            this.setState({ loading: true });
+            document.getElementById('news-section').scrollTo({top: 0, behavior: 'smooth'});
             let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=64cbaea366774d079c4d4318a36066a7&page=${
                 this.state.page + 1
             }&pageSize=20`;
             let data = await fetch(url);
             let parsedData = await data.json();
-            document.getElementById('news-section').scrollTo({top: 0, behavior: 'smooth'});
             this.setState({
                 articles: parsedData.articles,
                 page: this.state.page + 1,
+                loading: false,
             });
         }
     };
