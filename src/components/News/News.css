@@ -67,6 +67,39 @@
     gap: 1.2rem;
     justify-content: center;
 }
+/* Scroll to top button starts */
+.scroll-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: transparent;
+    height: auto;
+    width: auto;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.1s ease-in;
+    z-index: 100;
+}
+.scroll-to-top > button {
+    background-color: #000000;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+}
+.scroll-to-top > button > svg {
+    height: 1.5rem;
+    width: 1.5rem;
+}
 
 /* news pagination section */
 .news-pagination {

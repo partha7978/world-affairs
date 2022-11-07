@@ -8,10 +8,7 @@ import Fade from "@mui/material/Fade";
 import Carousel from "../Carousel/Carousel";
 import Loding from "../Loding/Loding";
 
-
-
 export class News extends Component {
-
     constructor() {
         super();
         console.log("Constructor from News Component");
@@ -23,7 +20,7 @@ export class News extends Component {
             //todo: State for snackBar
             open: false,
             Transition: Fade,
-            alertMsg: ""
+            alertMsg: "",
         };
     }
     // todo: for showing alert msg
@@ -34,8 +31,8 @@ export class News extends Component {
         });
         setTimeout(() => {
             this.setState({ open: false });
-        }, 1500)
-    }
+        }, 1500);
+    };
 
     async componentDidMount() {
         this.setState({ loading: true });
@@ -59,7 +56,9 @@ export class News extends Component {
         } else {
             console.log("Previous btn clicked");
             this.setState({ loading: true });
-            document.getElementById('news-section').scrollTo({top: 0, behavior: 'smooth'});
+            document
+                .getElementById("news-section")
+                .scrollTo({ top: 0, behavior: "smooth" });
             let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=64cbaea366774d079c4d4318a36066a7&page=${
                 this.state.page - 1
             }&pageSize=20`;
@@ -78,7 +77,9 @@ export class News extends Component {
         } else {
             console.log("Next btn clicked");
             this.setState({ loading: true });
-            document.getElementById('news-section').scrollTo({top: 0, behavior: 'smooth'});
+            document
+                .getElementById("news-section")
+                .scrollTo({ top: 0, behavior: "smooth" });
             let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=64cbaea366774d079c4d4318a36066a7&page=${
                 this.state.page + 1
             }&pageSize=20`;
@@ -108,14 +109,14 @@ export class News extends Component {
                             <h3>World Affairs</h3>
                         </div>
                         <div className="hamburger">
-                            <Hamburger/>
+                            <Hamburger />
                         </div>
                     </div>
                     <div className="news-main-container">
                         <div className="news-section" id="news-section">
-                            {this.state.loading && <Loding/>}
+                            {this.state.loading && <Loding />}
                             {/* for carousel section */}
-                            <Carousel {...this.state}/>
+                            <Carousel {...this.state} />
                             {/* for main news cards */}
                             <h2>Top Headlines - India</h2>
                             <div className="news-cards">
@@ -138,6 +139,25 @@ export class News extends Component {
                                         />
                                     );
                                 })}
+                            </div>
+                            {/* Scroll to top button */}
+                            <div className="scroll-to-top">
+                                <button>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        strokeWidth={1.5}
+                                        stroke="currentColor"
+                                        className="w-6 h-6"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18"
+                                        />
+                                    </svg>
+                                </button>
                             </div>
                             <div className="news-pagination">
                                 <button

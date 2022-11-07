@@ -27,12 +27,13 @@
     color: var(--text-color-light);
     margin: 1rem 0.5rem;
 
-    background-image: linear-gradient(
+    /* background-image: linear-gradient(
         to right,
         #5F0A87,
         #A4508B 50%,
         #A4508B 50%
-    );
+    ); */
+    background-image: linear-gradient(to right, #647DEE, #7F53AC);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
