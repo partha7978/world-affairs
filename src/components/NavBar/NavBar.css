@@ -11,7 +11,7 @@
 }
 .navbar-container {
     height: 100vh;
-    width: 19.5vw;
+    width: 19.9vw;
     background-color: var(--background-color-light);
     /* border-radius: 0 20px 20px 0; */
     border-right: 1px solid rgba(212, 212, 212);
@@ -52,7 +52,7 @@
     padding: 0.7rem;
     border-radius: 10px;
     /* border: 1px solid #898989; */
-    transition: all 0.2s ease-in;
+    transition: all 0.1s ease-in;
     cursor: pointer;
     font-size: 1rem;
     display: flex;
@@ -104,6 +104,7 @@
 .navBar-chips > .chip {
     background-color: var(--foreground-color-light);
     color: var(--text-color-light);
+    transition: all 0.1s ease-in;
 }
 
 .chip:hover{
