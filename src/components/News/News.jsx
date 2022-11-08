@@ -21,6 +21,8 @@ export class News extends Component {
             open: false,
             Transition: Fade,
             alertMsg: "",
+            // for scroll to top
+            scroll: false,
         };
     }
     // todo: for showing alert msg
@@ -48,7 +50,6 @@ export class News extends Component {
         });
         console.log(this.state.articles);
     }
-
     // todo: for handling previous and next page operations
     handlePreviousPage = async () => {
         if (this.state.page - 1 <= 0) {
@@ -56,9 +57,7 @@ export class News extends Component {
         } else {
             console.log("Previous btn clicked");
             this.setState({ loading: true });
-            document
-                .getElementById("news-section")
-                .scrollTo({ top: 0, behavior: "smooth" });
+            this.handleScrollOnClick();
             let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=64cbaea366774d079c4d4318a36066a7&page=${
                 this.state.page - 1
             }&pageSize=20`;
@@ -77,9 +76,7 @@ export class News extends Component {
         } else {
             console.log("Next btn clicked");
             this.setState({ loading: true });
-            document
-                .getElementById("news-section")
-                .scrollTo({ top: 0, behavior: "smooth" });
+            this.handleScrollOnClick();
             let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=64cbaea366774d079c4d4318a36066a7&page=${
                 this.state.page + 1
             }&pageSize=20`;
@@ -92,6 +89,33 @@ export class News extends Component {
             });
         }
     };
+
+    // todo: for handling scroll to top on clicking btn
+    // handleScrollToTopOnClick = () => {
+    //     if(document.getElementById("news-section").scrollTop > 20){
+    //         this.setState({scroll: true});
+    //     }else{
+    //         this.setState({scroll: false});
+    //     }
+    // }
+    componentDidUpdate() {
+        document
+        .getElementById("news-section").addEventListener("scroll", this.handleScrollTopOnScroll)
+    }
+    handleScrollTopOnScroll = () => {
+        if(document.getElementById("news-section").scrollTop > 20){
+            this.setState({scroll: true});
+        }else{
+            this.setState({scroll: false});
+        }
+    }
+    //todo: for handling scroll to top on clicking btn
+    handleScrollOnClick = () => {
+        document
+        .getElementById("news-section")
+        .scrollTo({ top: 0, behavior: "smooth" });
+    }
+
     render() {
         return (
             <div className="container-parent">
@@ -141,8 +165,8 @@ export class News extends Component {
                                 })}
                             </div>
                             {/* Scroll to top button */}
-                            <div className="scroll-to-top">
-                                <button>
+                            {this.state.scroll && <div className="scroll-to-top">
+                                <button onClick={this.handleScrollOnClick}>
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -158,7 +182,7 @@ export class News extends Component {
                                         />
                                     </svg>
                                 </button>
-                            </div>
+                            </div>}
                             <div className="news-pagination">
                                 <button
                                     className="news-pagination-btn"
