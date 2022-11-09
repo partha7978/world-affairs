@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Hamburger from "../Hamburger/Hamburger";
-import NavBar from "../NavBar/NavBar";
 import NewsCard from "../NewsCard/NewsCard";
 import "./News.css";
 import Snackbar from "@mui/material/Snackbar";
@@ -91,13 +89,6 @@ export class News extends Component {
     };
 
     // todo: for handling scroll to top on clicking btn
-    // handleScrollToTopOnClick = () => {
-    //     if(document.getElementById("news-section").scrollTop > 20){
-    //         this.setState({scroll: true});
-    //     }else{
-    //         this.setState({scroll: false});
-    //     }
-    // }
     componentDidUpdate() {
         document
         .getElementById("news-section").addEventListener("scroll", this.handleScrollTopOnScroll)
@@ -126,16 +117,9 @@ export class News extends Component {
                     message={this.state.alertMsg}
                     key={this.state.Transition.name}
                 />
-                <NavBar />
+             
                 <div className="news-container">
-                    <div className="news-navBar">
-                        <div className="main-logo">
-                            <h3>World Affairs</h3>
-                        </div>
-                        <div className="hamburger">
-                            <Hamburger />
-                        </div>
-                    </div>
+                   
                     <div className="news-main-container">
                         <div className="news-section" id="news-section">
                             {this.state.loading && <Loding />}

@@ -38,3 +38,10 @@ code {
   background: #aeaeae;
 }
 /* SCROLL BAR ENDS */
+
+/* hiding scroll bar in mobile screen */
+@media screen and (max-width: 800px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
