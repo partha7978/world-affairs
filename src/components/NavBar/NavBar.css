@@ -102,15 +102,18 @@
     flex-wrap: wrap;
     margin: 0.5rem 0.5rem 0.5rem 0;
 }
-.navBar-chips > .chip {
+.navBar-chips > a {
+    text-decoration: none;
+}
+.navBar-chips > a > .chip {
     background-color: var(--foreground-color-light);
     color: var(--text-color-light);
     transition: all 0.1s ease-in;
 }
 
 .chip:hover{
-    background-color: var(--foreground-color-hover-light);
-    color: var(--text-color-hover-light);
+    background-color: var(--foreground-color-hover-light) !important;
+    color: var(--text-color-hover-light) !important;
 }
 
 /* ! For responsive menu bar */

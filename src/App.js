@@ -16,7 +16,7 @@ function App() {
                     </div>
                 </div>
                 <NavBar />
-                <News />
+                <News country="in"/>
             </div>
         </div>
     );
