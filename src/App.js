@@ -22,14 +22,14 @@ function App() {
                     </div>
                     <NavBar />
                     <Routes>
-                        <Route path="/" element={<News country="in" category="general" />} />
-                        <Route path="/us" element={<News country="us" category="general" />} />
-                        <Route path="/de" element={<News country="de" category="general" />} />
-                        <Route path="/cn" element={<News country="cn" category="general" />} />
-                        <Route path="/ru" element={<News country="ru" category="general" />} />
-                        <Route path="/jp" element={<News country="jp" category="general" />} />
-                        <Route path="/au" element={<News country="au" category="general" />} />
-                        <Route path="/gb" element={<News country="gb" category="general" />} />
+                        <Route path="/" element={<News key="in" country="in" category="general" />} />
+                        <Route path="/us" element={<News key="us" country="us" category="general" />} />
+                        <Route path="/germany" element={<News key="germany" country="de" category="general" />} />
+                        <Route path="/china" element={<News key="china" country="cn" category="general" />} />
+                        <Route path="/russia" element={<News key="russia" country="ru" category="general" />} />
+                        <Route path="/japan" element={<News key="japan" country="jp" category="general" />} />
+                        <Route path="/australia" element={<News key="australia" country="au" category="general" />} />
+                        <Route path="/uk" element={<News key="uk" country="gb" category="general" />} />
                     </Routes>
                 </div>
             </div>
