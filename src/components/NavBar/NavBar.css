@@ -51,6 +51,7 @@
     width: 100%;
     background-color: var(--foreground-color-light);
     padding: 0.7rem;
+    margin: 0;
     border-radius: 10px;
     /* border: 1px solid #898989; */
     transition: all 0.1s ease-in;
@@ -58,6 +59,16 @@
     font-size: 1rem;
     display: flex;
     align-items: center;
+    color: var(--text-color-light);
+}
+.nav-link-item {
+    width: 100%;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navBar-links p svg {

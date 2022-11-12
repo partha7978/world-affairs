@@ -5,16 +5,16 @@ import Snackbar from "@mui/material/Snackbar";
 import Fade from "@mui/material/Fade";
 import Carousel from "../Carousel/Carousel";
 import Loding from "../Loding/Loding";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
 export class News extends Component {
     static defaultProps = {
         country: "in",
-        category: "general"
-    }
+        category: "general",
+    };
     static propTypes = {
-        country: PropTypes.string
-    }
+        country: PropTypes.string,
+    };
     constructor() {
         super();
         console.log("Constructor from News Component");
@@ -44,8 +44,7 @@ export class News extends Component {
 
     async componentDidMount() {
         this.setState({ loading: true });
-        let url =
-            `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=64cbaea366774d079c4d4318a36066a7&page=1&pageSize=20`;
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=64cbaea366774d079c4d4318a36066a7&page=1&pageSize=20`;
         let data = await fetch(url);
         let parsedData = await data.json();
         console.log(parsedData);
@@ -64,7 +63,11 @@ export class News extends Component {
             console.log("Previous btn clicked");
             this.setState({ loading: true });
             this.handleScrollOnClick();
-            let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=64cbaea366774d079c4d4318a36066a7&page=${
+            let url = `https://newsapi.org/v2/top-headlines?country=${
+                this.props.country
+            }&category=${
+                this.props.category
+            }&apiKey=64cbaea366774d079c4d4318a36066a7&page=${
                 this.state.page - 1
             }&pageSize=20`;
             let data = await fetch(url);
@@ -83,7 +86,11 @@ export class News extends Component {
             console.log("Next btn clicked");
             this.setState({ loading: true });
             this.handleScrollOnClick();
-            let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=64cbaea366774d079c4d4318a36066a7&page=${
+            let url = `https://newsapi.org/v2/top-headlines?country=${
+                this.props.country
+            }&category=${
+                this.props.category
+            }&apiKey=64cbaea366774d079c4d4318a36066a7&page=${
                 this.state.page + 1
             }&pageSize=20`;
             let data = await fetch(url);
@@ -99,21 +106,22 @@ export class News extends Component {
     // todo: for handling scroll to top on clicking btn
     componentDidUpdate() {
         document
-        .getElementById("news-section").addEventListener("scroll", this.handleScrollTopOnScroll)
+            .getElementById("news-section")
+            .addEventListener("scroll", this.handleScrollTopOnScroll);
     }
     handleScrollTopOnScroll = () => {
-        if(document.getElementById("news-section").scrollTop > 20){
-            this.setState({scroll: true});
-        }else{
-            this.setState({scroll: false});
+        if (document.getElementById("news-section").scrollTop > 20) {
+            this.setState({ scroll: true });
+        } else {
+            this.setState({ scroll: false });
         }
-    }
+    };
     //todo: for handling scroll to top on clicking btn
     handleScrollOnClick = () => {
         document
-        .getElementById("news-section")
-        .scrollTo({ top: 0, behavior: "smooth" });
-    }
+            .getElementById("news-section")
+            .scrollTo({ top: 0, behavior: "smooth" });
+    };
 
     render() {
         return (
@@ -125,16 +133,35 @@ export class News extends Component {
                     message={this.state.alertMsg}
                     key={this.state.Transition.name}
                 />
-             
+
                 <div className="news-container">
-                   
                     <div className="news-main-container">
                         <div className="news-section" id="news-section">
                             {this.state.loading && <Loding />}
                             {/* for carousel section */}
                             <Carousel {...this.state} />
                             {/* for main news cards */}
-                            <h2>Top Headlines - India</h2>
+                            <h2>
+                                Top Headlines -{" "}
+                                {this.props.country === "in"
+                                    ? "India"
+                                    : this.props.country === "us"
+                                    ? "United States"
+                                    : this.props.country === "de"
+                                    ? "Germany"
+                                    : this.props.country === "cn"
+                                    ? "China"
+                                    : this.props.country === "ru"
+                                    ? "Russia"
+                                    : this.props.country === "jp"
+                                    ? "Japan"
+                                    : this.props.country === "au"
+                                    ? "Australia"
+                                    : this.props.country === "gb"
+                                    ? "United Kingdom"
+                                    : " "
+                                }
+                            </h2>
                             <div className="news-cards">
                                 {this.state.articles.map((element) => {
                                     return (
@@ -157,24 +184,26 @@ export class News extends Component {
                                 })}
                             </div>
                             {/* Scroll to top button */}
-                            {this.state.scroll && <div className="scroll-to-top">
-                                <button onClick={this.handleScrollOnClick}>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        strokeWidth={1.5}
-                                        stroke="currentColor"
-                                        className="w-6 h-6"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18"
-                                        />
-                                    </svg>
-                                </button>
-                            </div>}
+                            {this.state.scroll && (
+                                <div className="scroll-to-top">
+                                    <button onClick={this.handleScrollOnClick}>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            strokeWidth={1.5}
+                                            stroke="currentColor"
+                                            className="w-6 h-6"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18"
+                                            />
+                                        </svg>
+                                    </button>
+                                </div>
+                            )}
                             <div className="news-pagination">
                                 <button
                                     className="news-pagination-btn"
