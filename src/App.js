@@ -22,6 +22,7 @@ function App() {
                     </div>
                     <NavBar />
                     <Routes>
+                        <Route path="/" element={<News key="in" country="in" category="general" />} />
                         <Route path="/home" element={<News key="in" country="in" category="general" />} />
                         <Route path="/in" element={<News key="in" country="in" category="general" />} />
                         <Route path="/us" element={<News key="us" country="us" category="general" />} />

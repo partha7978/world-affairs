@@ -36,8 +36,7 @@ export default function NewsCard({
                         color="text.secondary"
                         sx={{ marginTop: "0.5rem", fontSize: "0.7rem" }}
                     >
-                        Source: {source} | {times.split("T")[0]} :{" "}
-                        {times.split("T")[1].split("Z")[0]}
+                        Source: {source} | {new Date(times).toGMTString()}
                     </Typography>
                 </CardContent>
             </CardActionArea>
