@@ -16,7 +16,7 @@ import russiaLogo from '../../assets/image/russia.webp'
 import japanLogo from '../../assets/image/japan.webp'
 import australiaLogo from '../../assets/image/australia.webp'
 import unitedKingdomLogo from '../../assets/image/unitedKingdom.webp'
-
+import { Link } from "react-router-dom";
 
 export default function Hamburger() {
   let chipStyle = {
@@ -70,13 +70,13 @@ export default function Hamburger() {
               <span>Filter by countries</span>
               <Divider sx={{backgroundColor: '#ffffff'}}/>
               <div className="hamburger-chips">
-                <Chip sx={chipStyle} className="chip" label="USA" avatar={<Avatar alt="usaLogo" src={usaLogo} />} />
-                <Chip sx={chipStyle} className="chip" label="Germany" avatar={<Avatar alt="germanyLogo" src={germanyLogo} />} />
-                <Chip sx={chipStyle} className="chip" label="China" avatar={<Avatar alt="chinaLogo" src={chinaLogo} />} />
-                <Chip sx={chipStyle} className="chip" label="Russia" avatar={<Avatar alt="russiaLogo" src={russiaLogo} />} />
-                <Chip sx={chipStyle} className="chip" label="Japan" avatar={<Avatar alt="japanLogo" src={japanLogo} />} />
-                <Chip sx={chipStyle} className="chip" label="Australia" avatar={<Avatar alt="australiaLogo" src={australiaLogo} />} />
-                <Chip sx={chipStyle} className="chip" label="United Kingdom" avatar={<Avatar alt="unitedKingdomLogo" src={unitedKingdomLogo} />} />
+                <Link to="/us"><Chip sx={chipStyle} className="chip" label="USA" avatar={<Avatar alt="usaLogo" src={usaLogo} />} /></Link>
+                <Link to="/germany"><Chip sx={chipStyle} className="chip" label="Germany" avatar={<Avatar alt="germanyLogo" src={germanyLogo} />} /></Link>
+                <Link to="/china"><Chip sx={chipStyle} className="chip" label="China" avatar={<Avatar alt="chinaLogo" src={chinaLogo} />} /></Link>
+                <Link to="/russia"><Chip sx={chipStyle} className="chip" label="Russia" avatar={<Avatar alt="russiaLogo" src={russiaLogo} />} /></Link>
+                <Link to="/japan"><Chip sx={chipStyle} className="chip" label="Japan" avatar={<Avatar alt="japanLogo" src={japanLogo} />} /></Link>
+                <Link to="/australia"><Chip sx={chipStyle} className="chip" label="Australia" avatar={<Avatar alt="australiaLogo" src={australiaLogo} />} /></Link>
+                <Link to="/uk"><Chip sx={chipStyle} className="chip" label="United Kingdom" avatar={<Avatar alt="unitedKingdomLogo" src={unitedKingdomLogo} />} /></Link>
               </div>
             </div>
           </List>
