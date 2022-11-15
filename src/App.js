@@ -22,16 +22,16 @@ function App() {
                     </div>
                     <NavBar />
                     <Routes>
-                        <Route path="/" element={<News key="in" country="in" category="general" />} />
-                        <Route path="/home" element={<News key="in" country="in" category="general" />} />
-                        <Route path="/in" element={<News key="in" country="in" category="general" />} />
-                        <Route path="/us" element={<News key="us" country="us" category="general" />} />
-                        <Route path="/germany" element={<News key="germany" country="de" category="general" />} />
-                        <Route path="/china" element={<News key="china" country="cn" category="general" />} />
-                        <Route path="/russia" element={<News key="russia" country="ru" category="general" />} />
-                        <Route path="/japan" element={<News key="japan" country="jp" category="general" />} />
-                        <Route path="/australia" element={<News key="australia" country="au" category="general" />} />
-                        <Route path="/uk" element={<News key="uk" country="gb" category="general" />} />
+                        <Route path="/" element={<News key="in" country="in" category="general" pageSize="20" />} />
+                        <Route path="/home" element={<News key="in" country="in" category="general" pageSize="20" />} />
+                        <Route path="/in" element={<News key="in" country="in" category="general" pageSize="20" />} />
+                        <Route path="/us" element={<News key="us" country="us" category="general" pageSize="20" />} />
+                        <Route path="/germany" element={<News key="germany" country="de" category="general" pageSize="20" />} />
+                        <Route path="/china" element={<News key="china" country="cn" category="general" pageSize="20" />} />
+                        <Route path="/russia" element={<News key="russia" country="ru" category="general" pageSize="20" />} />
+                        <Route path="/japan" element={<News key="japan" country="jp" category="general" pageSize="20" />} />
+                        <Route path="/australia" element={<News key="australia" country="au" category="general" pageSize="20" />} />
+                        <Route path="/uk" element={<News key="uk" country="gb" category="general" pageSize="20" />} />
                     </Routes>
                 </div>
             </div>

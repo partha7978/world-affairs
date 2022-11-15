@@ -12,6 +12,9 @@
 .hamburger-menu {
     background-color: var(--foreground-color-light);
 }
+.hamBurger-list a {
+    text-decoration: none;
+}
 .hamBurger-list p {
     background-color: var(--foreground-color-hover-light);
     color: var(--text-color-hover-light);
