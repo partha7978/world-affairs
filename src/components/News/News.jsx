@@ -42,9 +42,10 @@ export class News extends Component {
         }, 1500);
     };
 
-    async componentDidMount() {
+    getNews = async() => {
         this.setState({ loading: true });
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=64cbaea366774d079c4d4318a36066a7&page=1&pageSize=20`;
+        this.handleScrollOnClick();
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=64cbaea366774d079c4d4318a36066a7&page=${this.state.page}&pageSize=20`;
         let data = await fetch(url);
         let parsedData = await data.json();
         console.log(parsedData);
@@ -53,6 +54,10 @@ export class News extends Component {
             totalArticles: parsedData.totalResults,
             loading: false,
         });
+    }
+
+    async componentDidMount() {
+        this.getNews();
         console.log(this.state.articles);
     }
     // todo: for handling previous and next page operations
@@ -61,45 +66,26 @@ export class News extends Component {
             this.showAlert("You are on the first page");
         } else {
             console.log("Previous btn clicked");
-            this.setState({ loading: true });
-            this.handleScrollOnClick();
-            let url = `https://newsapi.org/v2/top-headlines?country=${
-                this.props.country
-            }&category=${
-                this.props.category
-            }&apiKey=64cbaea366774d079c4d4318a36066a7&page=${
-                this.state.page - 1
-            }&pageSize=20`;
-            let data = await fetch(url);
-            let parsedData = await data.json();
-            this.setState({
-                articles: parsedData.articles,
-                page: this.state.page - 1,
-                loading: false,
-            });
+            //updating state immidietly with callbacks
+            this.setState({page: this.state.page - 1}, () => {
+                this.getNews();
+            })
+
+           
         }
     };
     handleNextPage = async () => {
         if (this.state.page + 1 > Math.ceil(this.state.totalArticles / 20)) {
             this.showAlert("No more pages to show");
         } else {
+            //todo: here i've tried to change the state 1st then call the funciton get news. But the problem is the state doesnt change immidietly. So as a
+            //todo: result, when i clicked next button it doesnt work and when clicking prev btn - it shows me the 2nd page result.
+            //todo: Thats why I have used callbacks to update the state 1st then perform the action as given.
+            //todo: https://linguinecode.com/post/why-react-setstate-usestate-does-not-update-immediately -- reference for updating state immediately.
             console.log("Next btn clicked");
-            this.setState({ loading: true });
-            this.handleScrollOnClick();
-            let url = `https://newsapi.org/v2/top-headlines?country=${
-                this.props.country
-            }&category=${
-                this.props.category
-            }&apiKey=64cbaea366774d079c4d4318a36066a7&page=${
-                this.state.page + 1
-            }&pageSize=20`;
-            let data = await fetch(url);
-            let parsedData = await data.json();
-            this.setState({
-                articles: parsedData.articles,
-                page: this.state.page + 1,
-                loading: false,
-            });
+            this.setState({page: this.state.page + 1}, () => {
+                this.getNews();
+            })
         }
     };
 
