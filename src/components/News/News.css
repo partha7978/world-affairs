@@ -114,7 +114,7 @@
     align-items: center;
     margin: 0.5rem 0;
 }
-.news-pagination > .news-pagination-btn {
+.news-pagination > .news-pagination-btn, .news-pagination > .page-show-btn{
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
@@ -130,8 +130,13 @@
     transition: all 0.3s ease-in-out;
 }
 .news-pagination > .news-pagination-btn:hover {
-    color: var(--text-color-hover);
-    background-color: var(--foreground-color-hover-dark);
+    color: var(--text-color-hover-light);
+    background-color: var(--foreground-color-hover-light);
+}
+.news-pagination > .page-show-btn {
+    color: var(--text-color-hover-light);
+    background-color: var(--foreground-color-hover-light);
+    font-weight: bold;
 }
 
 /* neqws pagination section */

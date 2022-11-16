@@ -27,7 +27,7 @@ export class News extends Component {
             open: false,
             Transition: Fade,
             alertMsg: "",
-            // for scroll to top
+            //* for scroll to top
             scroll: false,
         };
     }
@@ -69,9 +69,7 @@ export class News extends Component {
             //updating state immidietly with callbacks
             this.setState({page: this.state.page - 1}, () => {
                 this.getNews();
-            })
-
-           
+            }) 
         }
     };
     handleNextPage = async () => {
@@ -89,12 +87,13 @@ export class News extends Component {
         }
     };
 
-    // todo: for handling scroll to top on clicking btn
+    //* for handling scroll oprations
     componentDidUpdate() {
         document
             .getElementById("news-section")
             .addEventListener("scroll", this.handleScrollTopOnScroll);
     }
+    // * for hiding and showing scroll to top button
     handleScrollTopOnScroll = () => {
         if (document.getElementById("news-section").scrollTop > 20) {
             this.setState({ scroll: true });
@@ -102,7 +101,7 @@ export class News extends Component {
             this.setState({ scroll: false });
         }
     };
-    //todo: for handling scroll to top on clicking btn
+    //* for handling scroll to top on clicking btn
     handleScrollOnClick = () => {
         document
             .getElementById("news-section")
@@ -210,6 +209,7 @@ export class News extends Component {
                                         />
                                     </svg>
                                 </button>
+                                <button className="page-show-btn">{this.state.page}</button>
                                 <button
                                     className="news-pagination-btn"
                                     onClick={this.handleNextPage}
