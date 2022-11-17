@@ -27,6 +27,7 @@ export default function NewsCard({
                     alt="No image found"
                 />
                 <CardContent sx={{ paddingBottom: 1.2 }}>
+                    <button className="card-chip">{source}</button>
                     <h5 className="title">{title}</h5>
                     <Typography variant="body2" color="text.secondary">
                         {description}
@@ -36,7 +37,7 @@ export default function NewsCard({
                         color="text.secondary"
                         sx={{ marginTop: "0.5rem", fontSize: "0.7rem" }}
                     >
-                        Source: {source} | {new Date(times).toGMTString()}
+                    {new Date(times).toGMTString()}
                     </Typography>
                 </CardContent>
             </CardActionArea>

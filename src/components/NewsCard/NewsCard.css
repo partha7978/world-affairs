@@ -1,8 +1,22 @@
 :root {
     --foreground-color-dark: #171717;
     --foreground-color-hover-dark: rgb(49, 46, 129, 0.75);
-    --text-color-hover: rgb(165, 180, 252);
-    --text-color: rgb(255, 255, 255);
+    --foreground-color-hover-light: rgb(59, 73, 223, 0.1);
+    --text-color-hover-dark: rgb(165, 180, 252);
+    --text-color-hover-light: rgb(47, 58, 178);
+    --text-color-dark: rgb(255, 255, 255);
+    --text-color-light: rgb(0, 0, 0);
+    --background-color-light: #ffffff;
+    --foreground-color-light: #ffffff;   /*else use  FAFAFA or f5f5f5*/
+}
+.card-chip {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.6rem;
+    border: none;
+    border-radius: 20px;
+    margin: 0.2rem 0;
+    background-color: var(--foreground-color-hover-light);
+    color: var(--text-color-hover-light);
 }
 .shareIcon {
     height: 1rem;
