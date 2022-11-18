@@ -4,7 +4,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions } from "@mui/material";
+import { Button, CardActions } from "@mui/material";
 
 export default function NewsCard({
     title,
@@ -18,7 +18,7 @@ export default function NewsCard({
 }) {
     return (
         <Card className="newsCard">
-            <CardActionArea>
+            {/* <CardActionArea>   */} {/* Commenting this because this is a clickable section and if inside this im adding any button its giving me "button cannot appear as a descendant of button" error. This is because parent(card content) is clickable and inside this the child(button) is also clickable  */}
                 <CardMedia
                     // sx={{margin: 1.2, borderRadius: '10px', maxWidth: '93%'}}
                     component="img"
@@ -27,7 +27,10 @@ export default function NewsCard({
                     alt="No image found"
                 />
                 <CardContent sx={{ paddingBottom: 1.2 }}>
+                    <div>
                     <button className="card-chip">{source}</button>
+                    </div>
+                    
                     <h5 className="title">{title}</h5>
                     <Typography variant="body2" color="text.secondary">
                         {description}
@@ -40,7 +43,7 @@ export default function NewsCard({
                     {new Date(times).toGMTString()}
                     </Typography>
                 </CardContent>
-            </CardActionArea>
+            {/* </CardActionArea> */}
             <CardActions sx={{ paddingTop: 0 }}>
                 <a
                     href={newsUrl}
