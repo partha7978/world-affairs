@@ -6,6 +6,7 @@ import Fade from "@mui/material/Fade";
 import Carousel from "../Carousel/Carousel";
 import Loding from "../Loding/Loding";
 import PropTypes from "prop-types";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 export class News extends Component {
     static defaultProps = {
@@ -23,6 +24,7 @@ export class News extends Component {
             articles: [],
             loading: false,
             page: 1,
+            totalResults: 0,
             //todo: State for snackBar
             open: false,
             Transition: Fade,
@@ -42,7 +44,7 @@ export class News extends Component {
         }, 1500);
     };
 
-    getNews = async() => {
+    getNews = async () => {
         this.setState({ loading: true });
         this.handleScrollOnClick();
         let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=64cbaea366774d079c4d4318a36066a7&page=${this.state.page}&pageSize=20`;
@@ -54,7 +56,7 @@ export class News extends Component {
             totalArticles: parsedData.totalResults,
             loading: false,
         });
-    }
+    };
 
     async componentDidMount() {
         this.getNews();
@@ -67,9 +69,9 @@ export class News extends Component {
         } else {
             console.log("Previous btn clicked");
             //updating state immidietly with callbacks
-            this.setState({page: this.state.page - 1}, () => {
+            this.setState({ page: this.state.page - 1 }, () => {
                 this.getNews();
-            }) 
+            });
         }
     };
     handleNextPage = async () => {
@@ -81,9 +83,9 @@ export class News extends Component {
             //todo: Thats why I have used callbacks to update the state 1st then perform the action as given.
             //todo: https://linguinecode.com/post/why-react-setstate-usestate-does-not-update-immediately -- reference for updating state immediately.
             console.log("Next btn clicked");
-            this.setState({page: this.state.page + 1}, () => {
+            this.setState({ page: this.state.page + 1 }, () => {
                 this.getNews();
-            })
+            });
         }
     };
 
@@ -144,30 +146,39 @@ export class News extends Component {
                                     ? "Australia"
                                     : this.props.country === "gb"
                                     ? "United Kingdom"
-                                    : " "
-                                }
+                                    : " "}
                             </h2>
-                            <div className="news-cards">
-                                {this.state.articles.map((element) => {
-                                    return (
-                                        <NewsCard
-                                            key={element.url}
-                                            title={element.title.split("-")[0]}
-                                            description={
-                                                element.description
-                                                    ? element.description
-                                                    : "No description found"
-                                            }
-                                            imageUrl={element.urlToImage}
-                                            newsUrl={element.url}
-                                            author={element.author}
-                                            date={element.publishedAt}
-                                            source={element.source.name}
-                                            times={element.publishedAt}
-                                        />
-                                    );
-                                })}
-                            </div>
+
+                            <InfiniteScroll
+                                dataLength={this.state.articles.length}
+                                next={this.fetchMoreData}
+                                hasMore={this.state.articles.length !== this.state.totalResults}
+                                loader={<Loding />}
+                            >
+                                <div className="news-cards">
+                                    {this.state.articles.map((element) => {
+                                        return (
+                                            <NewsCard
+                                                key={element.url}
+                                                title={
+                                                    element.title.split("-")[0]
+                                                }
+                                                description={
+                                                    element.description
+                                                        ? element.description
+                                                        : "No description found"
+                                                }
+                                                imageUrl={element.urlToImage}
+                                                newsUrl={element.url}
+                                                author={element.author}
+                                                date={element.publishedAt}
+                                                source={element.source.name}
+                                                times={element.publishedAt}
+                                            />
+                                        );
+                                    })}
+                                </div>
+                            </InfiniteScroll>
                             {/* Scroll to top button */}
                             {this.state.scroll && (
                                 <div className="scroll-to-top">
@@ -209,7 +220,9 @@ export class News extends Component {
                                         />
                                     </svg>
                                 </button>
-                                <button className="page-show-btn">{this.state.page}</button>
+                                <button className="page-show-btn">
+                                    {this.state.page}
+                                </button>
                                 <button
                                     className="news-pagination-btn"
                                     onClick={this.handleNextPage}
