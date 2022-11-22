@@ -110,6 +110,26 @@ export class News extends Component {
             .scrollTo({ top: 0, behavior: "smooth" });
     };
 
+    //* for fetch more data in infinite scroll
+    fetchMoreData = () => {
+        this.setState({ page: this.state.page + 1 }, async () => {
+            console.log("articles length", this.state.articles.length);
+            this.setState({ loading: true });
+            let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=64cbaea366774d079c4d4318a36066a7&page=${this.state.page}&pageSize=20`;
+            let data = await fetch(url);
+            let parsedData = await data.json();
+            console.log(parsedData);
+            console.log("page is ", this.state.page);
+            this.setState({
+                articles: this.state.articles.concat(parsedData.articles),
+                totalArticles: parsedData.totalResults,
+                loading: false,
+            });
+            console.log("articles length", this.state.articles.length);
+        });
+       
+    }
+
     render() {
         return (
             <div className="container-parent">
@@ -124,7 +144,7 @@ export class News extends Component {
                 <div className="news-container">
                     <div className="news-main-container">
                         <div className="news-section" id="news-section">
-                            {this.state.loading && <Loding />}
+                            {/* {this.state.loading && <Loding />} */}
                             {/* for carousel section */}
                             <Carousel {...this.state} />
                             {/* for main news cards */}
