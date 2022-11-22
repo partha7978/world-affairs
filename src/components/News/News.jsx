@@ -24,7 +24,7 @@ export class News extends Component {
             articles: [],
             loading: false,
             page: 1,
-            totalResults: 0,
+            totalArticles: 0,
             //todo: State for snackBar
             open: false,
             Transition: Fade,
@@ -32,6 +32,8 @@ export class News extends Component {
             //* for scroll to top
             scroll: false,
         };
+
+        console.log("construyctor total articles", this.state.totalArticles);
     }
     // todo: for showing alert msg
     showAlert = (msg) => {
@@ -56,6 +58,7 @@ export class News extends Component {
             totalArticles: parsedData.totalResults,
             loading: false,
         });
+        console.log("getNews total articles", this.state.totalArticles);
     };
 
     async componentDidMount() {
@@ -114,6 +117,7 @@ export class News extends Component {
     fetchMoreData = () => {
         this.setState({ page: this.state.page + 1 }, async () => {
             console.log("articles length", this.state.articles.length);
+            console.log("TOTAL articles length", this.state.totalArticles.length);
             this.setState({ loading: true });
             let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=64cbaea366774d079c4d4318a36066a7&page=${this.state.page}&pageSize=20`;
             let data = await fetch(url);
@@ -122,7 +126,6 @@ export class News extends Component {
             console.log("page is ", this.state.page);
             this.setState({
                 articles: this.state.articles.concat(parsedData.articles),
-                totalArticles: parsedData.totalResults,
                 loading: false,
             });
             console.log("articles length", this.state.articles.length);
@@ -144,7 +147,7 @@ export class News extends Component {
                 <div className="news-container">
                     <div className="news-main-container">
                         <div className="news-section" id="news-section">
-                            {/* {this.state.loading && <Loding />} */}
+                            {this.state.loading && <Loding />}
                             {/* for carousel section */}
                             <Carousel {...this.state} />
                             {/* for main news cards */}
@@ -172,7 +175,7 @@ export class News extends Component {
                             <InfiniteScroll
                                 dataLength={this.state.articles.length}
                                 next={this.fetchMoreData}
-                                hasMore={this.state.articles.length !== this.state.totalResults}
+                                hasMore={this.state.articles.length !== this.state.totalArticles}
                                 loader={<Loding />}
                             >
                                 <div className="news-cards">
