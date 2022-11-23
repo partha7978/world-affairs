@@ -223,7 +223,7 @@ export class News extends Component {
                                     </button>
                                 </div>
                             )}
-                            <div className="news-pagination">
+                            {/* <div className="news-pagination">
                                 <button
                                     className="news-pagination-btn"
                                     onClick={this.handlePreviousPage}
@@ -265,7 +265,7 @@ export class News extends Component {
                                         />
                                     </svg>
                                 </button>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

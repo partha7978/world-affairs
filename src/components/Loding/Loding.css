@@ -1,8 +1,6 @@
-.loding {
-    height: 100vh;
-    width: auto;
+.loding {   
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff;
+    background-color: #f5f5f5;
 }
