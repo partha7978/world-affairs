@@ -19,10 +19,10 @@ code {
 /* SCROLL BAR STARTS */
 /* width */
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 10px;
 }
 ::-webkit-scrollbar:hover {
-  width: 0px;
+  width: 10px;
 }
 /* Track */
 ::-webkit-scrollbar-track {

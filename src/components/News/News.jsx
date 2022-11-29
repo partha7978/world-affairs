@@ -6,7 +6,7 @@ import Fade from "@mui/material/Fade";
 import Carousel from "../Carousel/Carousel";
 import Loding from "../Loding/Loding";
 import PropTypes from "prop-types";
-import InfiniteScroll from "react-infinite-scroll-component";
+// import InfiniteScroll from "react-infinite-scroll-component";
 
 export class News extends Component {
     static defaultProps = {
@@ -114,24 +114,24 @@ export class News extends Component {
     };
 
     //* for fetch more data in infinite scroll
-    fetchMoreData = () => {
-        this.setState({ page: this.state.page + 1 }, async () => {
-            console.log("articles length", this.state.articles.length);
-            console.log("TOTAL articles length", this.state.totalArticles.length);
-            this.setState({ loading: true });
-            let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=64cbaea366774d079c4d4318a36066a7&page=${this.state.page}&pageSize=20`;
-            let data = await fetch(url);
-            let parsedData = await data.json();
-            console.log(parsedData);
-            console.log("page is ", this.state.page);
-            this.setState({
-                articles: this.state.articles.concat(parsedData.articles),
-                loading: false,
-            });
-            console.log("articles length", this.state.articles.length);
-        });
+    // fetchMoreData = () => {
+    //     this.setState({ page: this.state.page + 1 }, async () => {
+    //         console.log("articles length", this.state.articles.length);
+    //         console.log("TOTAL articles length", this.state.totalArticles.length);
+    //         this.setState({ loading: true });
+    //         let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=64cbaea366774d079c4d4318a36066a7&page=${this.state.page}&pageSize=20`;
+    //         let data = await fetch(url);
+    //         let parsedData = await data.json();
+    //         console.log(parsedData);
+    //         console.log("page is ", this.state.page);
+    //         this.setState({
+    //             articles: this.state.articles.concat(parsedData.articles),
+    //             loading: false,
+    //         });
+    //         console.log("articles length", this.state.articles.length);
+    //     });
        
-    }
+    // }
 
     render() {
         return (
@@ -172,12 +172,12 @@ export class News extends Component {
                                     : " "}
                             </h2>
 
-                            <InfiniteScroll
+                            {/* <InfiniteScroll
                                 dataLength={this.state.articles.length}
                                 next={this.fetchMoreData}
                                 hasMore={this.state.articles.length !== this.state.totalArticles}
                                 loader={<Loding />}
-                            >
+                            > */}
                                 <div className="news-cards">
                                     {this.state.articles.map((element) => {
                                         return (
@@ -201,7 +201,7 @@ export class News extends Component {
                                         );
                                     })}
                                 </div>
-                            </InfiniteScroll>
+                            {/* </InfiniteScroll> */}
                             {/* Scroll to top button */}
                             {this.state.scroll && (
                                 <div className="scroll-to-top">
@@ -223,7 +223,7 @@ export class News extends Component {
                                     </button>
                                 </div>
                             )}
-                            {/* <div className="news-pagination">
+                            <div className="news-pagination">
                                 <button
                                     className="news-pagination-btn"
                                     onClick={this.handlePreviousPage}
@@ -265,7 +265,7 @@ export class News extends Component {
                                         />
                                     </svg>
                                 </button>
-                            </div> */}
+                            </div>
                         </div>
                     </div>
                 </div>
