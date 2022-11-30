@@ -151,26 +151,30 @@ export class News extends Component {
                             {/* for carousel section */}
                             <Carousel {...this.state} />
                             {/* for main news cards */}
-                            <h2>
+                            {!this.state.loading && 
+                                <h2>
                                 Top Headlines -{" "}
-                                {this.props.country === "in"
-                                    ? "India"
-                                    : this.props.country === "us"
-                                    ? "United States"
-                                    : this.props.country === "de"
-                                    ? "Germany"
-                                    : this.props.country === "cn"
-                                    ? "China"
-                                    : this.props.country === "ru"
-                                    ? "Russia"
-                                    : this.props.country === "jp"
-                                    ? "Japan"
-                                    : this.props.country === "au"
-                                    ? "Australia"
-                                    : this.props.country === "gb"
-                                    ? "United Kingdom"
-                                    : " "}
-                            </h2>
+                                    {this.props.country === "in"
+                                        ? "India"
+                                        : this.props.country === "us"
+                                        ? "United States"
+                                        : this.props.country === "de"
+                                        ? "Germany"
+                                        : this.props.country === "cn"
+                                        ? "China"
+                                        : this.props.country === "ru"
+                                        ? "Russia"
+                                        : this.props.country === "jp"
+                                        ? "Japan"
+                                        : this.props.country === "au"
+                                        ? "Australia"
+                                        : this.props.country === "gb"
+                                        ? "United Kingdom"
+                                        : " "
+                                    }
+                                </h2>
+                            }
+                           
 
                             {/* <InfiniteScroll
                                 dataLength={this.state.articles.length}
@@ -223,7 +227,8 @@ export class News extends Component {
                                     </button>
                                 </div>
                             )}
-                            <div className="news-pagination">
+                            {!this.state.loading && 
+                                <div className="news-pagination">
                                 <button
                                     className="news-pagination-btn"
                                     onClick={this.handlePreviousPage}
@@ -266,6 +271,7 @@ export class News extends Component {
                                     </svg>
                                 </button>
                             </div>
+                            }
                         </div>
                     </div>
                 </div>
