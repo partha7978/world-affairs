@@ -2,16 +2,22 @@ import "./App.css";
 import News from "./components/News/News";
 import NavBar from "./components/NavBar/NavBar";
 import Hamburger from "./components/Hamburger/Hamburger";
+import React, { useState } from 'react'
 import {
     Routes,
     Route,
   } from "react-router-dom";
+import LoadingBar from 'react-top-loading-bar'
 
 function App() {
+    const [loadingBar, setLoadingBar] = useState(0);
     return (
-     
             <div className="App">
                 <div className="main-container">
+                    <LoadingBar
+                        color='#f11946'
+                        progress={loadingBar}
+                    />
                     <div className="news-navBar">
                         <div className="main-logo">
                             <h3>World Affairs</h3>
