@@ -17,6 +17,7 @@ function App() {
                     <LoadingBar
                         color='#f11946'
                         progress={loadingBar}
+                        height={3}
                     />
                     <div className="news-navBar">
                         <div className="main-logo">
@@ -28,16 +29,16 @@ function App() {
                     </div>
                     <NavBar />
                     <Routes>
-                        <Route path="/" element={<News key="in" country="in" category="general" pageSize="20" />} />
-                        <Route path="/home" element={<News key="in" country="in" category="general" pageSize="20" />} />
-                        <Route path="/in" element={<News key="in" country="in" category="general" pageSize="20" />} />
-                        <Route path="/us" element={<News key="us" country="us" category="general" pageSize="20" />} />
-                        <Route path="/germany" element={<News key="germany" country="de" category="general" pageSize="20" />} />
-                        <Route path="/china" element={<News key="china" country="cn" category="general" pageSize="20" />} />
-                        <Route path="/russia" element={<News key="russia" country="ru" category="general" pageSize="20" />} />
-                        <Route path="/japan" element={<News key="japan" country="jp" category="general" pageSize="20" />} />
-                        <Route path="/australia" element={<News key="australia" country="au" category="general" pageSize="20" />} />
-                        <Route path="/uk" element={<News key="uk" country="gb" category="general" pageSize="20" />} />
+                        <Route path="/" element={<News setLoadingBar = {setLoadingBar} key="in" country="in" category="general" pageSize="20" />} />
+                        <Route path="/home" element={<News setLoadingBar = {setLoadingBar} key="in" country="in" category="general" pageSize="20" />} />
+                        <Route path="/in" element={<News setLoadingBar = {setLoadingBar} key="in" country="in" category="general" pageSize="20" />} />
+                        <Route path="/us" element={<News setLoadingBar = {setLoadingBar} key="us" country="us" category="general" pageSize="20" />} />
+                        <Route path="/germany" element={<News setLoadingBar = {setLoadingBar} key="germany" country="de" category="general" pageSize="20" />} />
+                        <Route path="/china" element={<News setLoadingBar = {setLoadingBar} key="china" country="cn" category="general" pageSize="20" />} />
+                        <Route path="/russia" element={<News setLoadingBar = {setLoadingBar} key="russia" country="ru" category="general" pageSize="20" />} />
+                        <Route path="/japan" element={<News setLoadingBar = {setLoadingBar} key="japan" country="jp" category="general" pageSize="20" />} />
+                        <Route path="/australia" element={<News setLoadingBar = {setLoadingBar} key="australia" country="au" category="general" pageSize="20" />} />
+                        <Route path="/uk" element={<News setLoadingBar = {setLoadingBar} key="uk" country="gb" category="general" pageSize="20" />} />
                     </Routes>
                 </div>
             </div>
