@@ -51,7 +51,7 @@ export class News extends Component {
         this.props.setLoadingBar(20);
         this.setState({ loading: true });
         this.handleScrollOnClick();
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=64cbaea366774d079c4d4318a36066a7&page=${this.state.page}&pageSize=20`;
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=20`;
         this.props.setLoadingBar(30);
         let data = await fetch(url);
         this.props.setLoadingBar(40);
