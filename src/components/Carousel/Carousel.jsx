@@ -54,12 +54,14 @@ export default function Carousel({ articles }) {
                                     <img alt="img" src={element.urlToImage}/>
                                 </div>
                                 <div className="news-text">
-                                    <h4 className="news-title">
-                                        {element.title.split('-')[0]}
-                                    </h4>
-                                    <div className="btn-read">
-                                        <a href={element.url} target="_blank" rel="noreferrer"><button>Read More</button></a>
-                                    </div>
+                                    <div className="news-text-inner">
+                                        <h4 className="news-title">
+                                            {element.title.split('-')[0]}
+                                        </h4>
+                                        <div className="btn-read">
+                                            <a href={element.url} target="_blank" rel="noreferrer"><button>Read More</button></a>
+                                        </div>
+                                    </div> 
                                 </div>
                             </div>
                         );

@@ -19,7 +19,7 @@ function App() {
             <div className="App">
                 <div className="main-container">
                     <LoadingBar
-                        color='rgb(32, 222, 211)'
+                        color='rgb(165, 180, 252)'
                         progress={loadingBar}
                         height={3}
                     />
