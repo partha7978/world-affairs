@@ -117,8 +117,8 @@
     margin: 2rem 0 1rem 0;
 }
 .news-pagination > .news-pagination-btn, .news-pagination > .page-show-btn{
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     border-radius: 50%;
     background-color: transparent;
     padding: 0.3rem;

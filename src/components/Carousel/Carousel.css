@@ -90,3 +90,14 @@
 .each-slide > .news-text >.news-text-inner > .btn-read > a > button:hover {
    transform: translateY(-3px);
 }
+
+@media only screen and (max-width: 600px) {
+    .each-slide > .news-text >.news-text-inner > .news-title {
+        width: 100%;
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        padding: 0.2rem 1rem;
+        padding-left: 3rem !important;
+    }
+}
