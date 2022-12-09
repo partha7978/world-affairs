@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import NewsCard from "../NewsCard/NewsCard";
 import "./News.css";
 import Snackbar from "@mui/material/Snackbar";
@@ -8,112 +8,99 @@ import Loding from "../Loding/Loding";
 import PropTypes from "prop-types";
 // import InfiniteScroll from "react-infinite-scroll-component";
 
-export class News extends Component {
-    static defaultProps = {
-        country: "in",
-        category: "general",
-    };
-    static propTypes = {
-        country: PropTypes.string,
-    };
-    constructor() {
-        super();
-        console.log("Constructor from News Component");
-        //todo: State for the fetched news
-        this.state = {
-            articles: [],
-            loading: false,
-            page: 1,
-            totalArticles: 0,
-            //todo: State for snackBar
-            open: false,
-            Transition: Fade,
-            alertMsg: "",
-            //* for scroll to top
-            scroll: false,
-        };
+export default function News(props) {
+     //todo: State for the fetched news
+    const [articles, setArticles] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [page, setPage] = useState(1);
+    const [totalArticles, setTotalArticles] = useState(0);
+      //todo: State for snackBar
+    const [open, setOpen] = useState(false);
+    const [Transition, setTransition] = useState(Fade);
+    const [alertMsg, setAlertMsg] = useState("");
+     //* for scroll to top
+    const [scroll, setScroll] = useState(false);
 
-        console.log("construyctor total articles", this.state.totalArticles);
-    }
+
     // todo: for showing alert msg
-    showAlert = (msg) => {
-        this.setState({
-            open: true,
-            alertMsg: msg,
-        });
+    const showAlert = (msg) => {
+        setOpen(true);
+        setAlertMsg(msg);
         setTimeout(() => {
-            this.setState({ open: false });
+            setOpen(false);
         }, 1500);
     };
 
-    getNews = async () => {
-        this.props.setLoadingBar(10);
-        this.props.setLoadingBar(20);
-        this.setState({ loading: true });
-        this.handleScrollOnClick();
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=20`;
-        this.props.setLoadingBar(30);
+    const getNews = async () => {
+        props.setLoadingBar(10);
+        props.setLoadingBar(20);
+        setLoading(true);
+        handleScrollOnClick();
+        let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${state.page}&pageSize=20`;
+        props.setLoadingBar(30);
         let data = await fetch(url);
-        this.props.setLoadingBar(40);
+        props.setLoadingBar(40);
         let parsedData = await data.json();
-        this.props.setLoadingBar(60);
+        props.setLoadingBar(60);
         console.log(parsedData);
-        this.setState({
-            articles: parsedData.articles,
-            totalArticles: parsedData.totalResults,
-            loading: false,
-        });
-        this.props.setLoadingBar(80);
-        this.props.setLoadingBar(100);
+        setArticles(parsedData.articles);
+        setTotalArticles(parsedData.totalResults);
+        setLoading(false);
+        props.setLoadingBar(80);
+        props.setLoadingBar(100);
     };
 
-    async componentDidMount() {
-        this.getNews();
-        console.log(this.state.articles);
-    }
+    useEffect(() => {
+        getNews();
+        console.log(articles);
+    }, [])
+    
     // todo: for handling previous and next page operations
     handlePreviousPage = async () => {
-        if (this.state.page - 1 <= 0) {
-            this.showAlert("You are on the first page");
+        if (page - 1 <= 0) {
+            showAlert("You are on the first page");
         } else {
             console.log("Previous btn clicked");
             //updating state immidietly with callbacks
-            this.setState({ page: this.state.page - 1 }, () => {
-                this.getNews();
-            });
+            setPage(page - 1)
+            useEffect(() => {
+               getNews();
+            }, [page])
+            
         }
     };
     handleNextPage = async () => {
-        if (this.state.page + 1 > Math.ceil(this.state.totalArticles / 20)) {
-            this.showAlert("No more pages to show");
+        if (page + 1 > Math.ceil(totalArticles / 20)) {
+            showAlert("No more pages to show");
         } else {
             //todo: here i've tried to change the state 1st then call the funciton get news. But the problem is the state doesnt change immidietly. So as a
             //todo: result, when i clicked next button it doesnt work and when clicking prev btn - it shows me the 2nd page result.
             //todo: Thats why I have used callbacks to update the state 1st then perform the action as given.
             //todo: https://linguinecode.com/post/why-react-setstate-usestate-does-not-update-immediately -- reference for updating state immediately.
             console.log("Next btn clicked");
-            this.setState({ page: this.state.page + 1 }, () => {
-                this.getNews();
-            });
+            setPage(page + 1)
+            useEffect(() => {
+               getNews();
+            }, [page])
         }
     };
 
     //* for handling scroll oprations
-    componentDidUpdate() {
-        document
-            .getElementById("news-section")
-            .addEventListener("scroll", this.handleScrollTopOnScroll);
-    }
+    // componentDidUpdate() {
+    //     document
+    //         .getElementById("news-section")
+    //         .addEventListener("scroll", this.handleScrollTopOnScroll);
+    // }
     // * for hiding and showing scroll to top button
-    handleScrollTopOnScroll = () => {
+    const handleScrollTopOnScroll = () => {
         if (document.getElementById("news-section").scrollTop > 20) {
-            this.setState({ scroll: true });
+            setScroll(true);
         } else {
-            this.setState({ scroll: false });
+            setScroll(false);
         }
     };
     //* for handling scroll to top on clicking btn
-    handleScrollOnClick = () => {
+    const handleScrollOnClick = () => {
         document
             .getElementById("news-section")
             .scrollTo({ top: 0, behavior: "smooth" });
@@ -285,4 +272,11 @@ export class News extends Component {
         );
     }
 }
-export default News;
+
+News.defaultProps = {
+    country: "in",
+    category: "general",
+};
+News.propTypes = {
+    country: PropTypes.string,
+};
