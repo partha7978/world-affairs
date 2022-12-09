@@ -3,7 +3,7 @@ import { Fade } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import "./Carousel.css";
 
-export default function Carousel({ articles }) {
+export default function Carousel(props) {
     const nav_btn_arrow_styles = {
         prevArrow: (
             <button className="arrow-btn">
@@ -45,7 +45,7 @@ export default function Carousel({ articles }) {
     return (
         <div>
             <Fade {...nav_btn_arrow_styles}>
-                {articles
+                {props.articles
                     .filter((article) => article.urlToImage !== null)
                     .map((element) => {
                         return (

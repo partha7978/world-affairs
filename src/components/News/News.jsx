@@ -16,7 +16,7 @@ export default function News(props) {
     const [totalArticles, setTotalArticles] = useState(0);
       //todo: State for snackBar
     const [open, setOpen] = useState(false);
-    const [Transition, setTransition] = useState(Fade);
+    const [transition, setTransition] = useState(Fade);
     const [alertMsg, setAlertMsg] = useState("");
      //* for scroll to top
     const [scroll, setScroll] = useState(false);
@@ -36,7 +36,7 @@ export default function News(props) {
         props.setLoadingBar(20);
         setLoading(true);
         handleScrollOnClick();
-        let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${state.page}&pageSize=20`;
+        let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=20`;
         props.setLoadingBar(30);
         let data = await fetch(url);
         props.setLoadingBar(40);
@@ -48,28 +48,28 @@ export default function News(props) {
         setLoading(false);
         props.setLoadingBar(80);
         props.setLoadingBar(100);
-    };
+    }
 
     useEffect(() => {
         getNews();
-        console.log(articles);
     }, [])
     
     // todo: for handling previous and next page operations
-    handlePreviousPage = async () => {
+    const HandlePreviousPage = async () => {
         if (page - 1 <= 0) {
             showAlert("You are on the first page");
         } else {
             console.log("Previous btn clicked");
             //updating state immidietly with callbacks
-            setPage(page - 1)
-            useEffect(() => {
-               getNews();
-            }, [page])
+            // setPage(page - 1)
+           
+            // useEffect(() => {
+            //    getNews();
+            // }, [page])
             
         }
     };
-    handleNextPage = async () => {
+    const HandleNextPage = async () => {
         if (page + 1 > Math.ceil(totalArticles / 20)) {
             showAlert("No more pages to show");
         } else {
@@ -78,19 +78,25 @@ export default function News(props) {
             //todo: Thats why I have used callbacks to update the state 1st then perform the action as given.
             //todo: https://linguinecode.com/post/why-react-setstate-usestate-does-not-update-immediately -- reference for updating state immediately.
             console.log("Next btn clicked");
-            setPage(page + 1)
-            useEffect(() => {
-               getNews();
-            }, [page])
+            // setPage(page + 1)
+            // useEffect(() => {
+            //    getNews();
+            // }, [page])
         }
+       
     };
-
     //* for handling scroll oprations
     // componentDidUpdate() {
     //     document
     //         .getElementById("news-section")
     //         .addEventListener("scroll", this.handleScrollTopOnScroll);
     // }
+    useEffect(() => {
+        document
+            .getElementById("news-section")
+            .addEventListener("scroll", handleScrollTopOnScroll);
+    }, [])
+
     // * for hiding and showing scroll to top button
     const handleScrollTopOnScroll = () => {
         if (document.getElementById("news-section").scrollTop > 20) {
@@ -126,42 +132,41 @@ export default function News(props) {
        
     // }
 
-    render() {
         return (
             <div className="container-parent">
                 <Snackbar
-                    open={this.state.open}
+                    open={open}
                     autoHideDuration={6000} // for how long the snackbar will be visible
-                    TransitionComponent={this.state.Transition}
-                    message={this.state.alertMsg}
-                    key={this.state.Transition.name}
+                    TransitionComponent={transition}
+                    message={alertMsg}
+                    key={transition.name}
                 />
 
                 <div className="news-container">
                     <div className="news-main-container">
                         <div className="news-section" id="news-section">
-                            {this.state.loading && <Loding />}
+                            {loading && <Loding />}
                             {/* for carousel section */}
-                            <Carousel {...this.state} />
+                            <Carousel articles = {articles} loading = { loading } page = { page } totalArticles = { totalArticles } alertMsg = { alertMsg }/>
                             {/* for main news cards */}
-                            {!this.state.loading && 
+                            {!loading && 
                                 <h2>
                                 Top Headlines -{" "}
-                                    {this.props.country === "in"
+                                    {props.country === "in"
                                         ? "India"
-                                        : this.props.country === "us"
+                                        : props.country === "us"
                                         ? "United States"
-                                        : this.props.country === "de"
+                                        : props.country === "de"
                                         ? "Germany"
-                                        : this.props.country === "cn"
+                                        : props.country === "cn"
                                         ? "China"
-                                        : this.props.country === "ru"
+                                        : props.country === "ru"
                                         ? "Russia"
-                                        : this.props.country === "jp"
+                                        : props.country === "jp"
                                         ? "Japan"
-                                        : this.props.country === "au"
+                                        : props.country === "au"
                                         ? "Australia"
-                                        : this.props.country === "gb"
+                                        : props.country === "gb"
                                         ? "United Kingdom"
                                         : " "
                                     }
@@ -176,7 +181,7 @@ export default function News(props) {
                                 loader={<Loding />}
                             > */}
                                 <div className="news-cards">
-                                    {this.state.articles.map((element) => {
+                                    {articles.map((element) => {
                                         return (
                                             <NewsCard
                                                 key={element.url}
@@ -200,9 +205,9 @@ export default function News(props) {
                                 </div>
                             {/* </InfiniteScroll> */}
                             {/* Scroll to top button */}
-                            {this.state.scroll && (
+                            {scroll && (
                                 <div className="scroll-to-top">
-                                    <button onClick={this.handleScrollOnClick}>
+                                    <button onClick={handleScrollOnClick}>
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
@@ -220,11 +225,11 @@ export default function News(props) {
                                     </button>
                                 </div>
                             )}
-                            {!this.state.loading && 
+                            {!loading && 
                                 <div className="news-pagination">
                                 <p
                                     className="news-pagination-btn"
-                                    onClick={this.handlePreviousPage}
+                                    onClick={HandlePreviousPage}
                                 >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -242,11 +247,11 @@ export default function News(props) {
                                     </svg>
                                 </p>
                                 <p className="page-show-btn">
-                                    {this.state.page}
+                                    {page}
                                 </p>
                                 <p
                                     className="news-pagination-btn"
-                                    onClick={this.handleNextPage}
+                                    onClick={HandleNextPage}
                                 >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -270,7 +275,6 @@ export default function News(props) {
                 </div>
             </div>
         );
-    }
 }
 
 News.defaultProps = {
