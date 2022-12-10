@@ -61,30 +61,33 @@ export default function News(props) {
         } else {
             console.log("Previous btn clicked");
             //updating state immidietly with callbacks
-            // setPage(page - 1)
-           
-            // useEffect(() => {
-            //    getNews();
-            // }, [page])
-            
+            setPage(page - 1)
         }
     };
     const HandleNextPage = async () => {
         if (page + 1 > Math.ceil(totalArticles / 20)) {
             showAlert("No more pages to show");
         } else {
+            //! FOR CLASS BASED COMPONENTS
             //todo: here i've tried to change the state 1st then call the funciton get news. But the problem is the state doesnt change immidietly. So as a
             //todo: result, when i clicked next button it doesnt work and when clicking prev btn - it shows me the 2nd page result.
             //todo: Thats why I have used callbacks to update the state 1st then perform the action as given.
             //todo: https://linguinecode.com/post/why-react-setstate-usestate-does-not-update-immediately -- reference for updating state immediately.
+            //todo: EXAMPLE:  this.setState({ page: this.state.page + 1 }, () => { OPERATION TO BE PERFORMED AFTER STATE CHANGE })
+            //! FOR FUNCTION BASED COMPONENTS
+            //todo: as we know that in functional components we dont have setState() method. So we have to use useState() hook to update the state.
+            //todo: and as the state doesnt change instantly, in CLASS BASED COMPONENTS I have used callbacks to update the state 1st then perform the action.
+            //todo: but here as I used useEffect to update and rerender the component, and useEffect doesnt support for callbacks, so I
+            //todo: updated the state in the condition and then called the useEffect() hook to perform the action and pass the [Page ] as a parameter
+            //todo: so that everytime the page changes the useEffect() hook will trigger and rerender the component.
             console.log("Next btn clicked");
-            // setPage(page + 1)
-            // useEffect(() => {
-            //    getNews();
-            // }, [page])
+            setPage(page + 1)
         }
-       
     };
+    useEffect(() => {
+        getNews();
+    }, [page])
+            
     //* for handling scroll oprations
     // componentDidUpdate() {
     //     document
