@@ -52,7 +52,7 @@ export default function News(props) {
 
     useEffect(() => {
         getNews();
-    }, [])
+    }, [page])
     
     // todo: for handling previous and next page operations
     const HandlePreviousPage = async () => {
@@ -84,10 +84,12 @@ export default function News(props) {
             setPage(page + 1)
         }
     };
-    useEffect(() => {
-        getNews();
-    }, [page])
-            
+
+    // useEffect(() => {
+    //     getNews();
+    //? here I have used useEffect only once and add page as a dependency so that everytime the page changes the useEffect() hook will trigger and rerender the component.
+    // }, [page])
+    
     //* for handling scroll oprations
     // componentDidUpdate() {
     //     document
