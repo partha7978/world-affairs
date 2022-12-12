@@ -155,11 +155,18 @@ export default function News(props) {
                             <Carousel articles = {articles} loading = { loading } page = { page } totalArticles = { totalArticles } alertMsg = { alertMsg } country={props.country}/>
                             {/* for main news cards */}
                             {!loading && 
-                                <div>
-                                    <div className="filter-category">
-                                        
+                                <div className="filter-category">
+                                    <p>Filter by category</p>
+                                    <div className="filter-category-btns">
+                                        <button>General</button>
+                                        <button>Entertainment</button>
+                                        <button>Health</button>
+                                        <button>Science</button>
+                                        <button>Sports</button>
+                                        <button>Technology</button>
+                                        <button>Business</button>
                                     </div>
-                               </div>
+                                </div>
                             }
                            
 

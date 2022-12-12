@@ -54,12 +54,31 @@
     height: 100vh;
     overflow:auto;
 }
-.news-section h2 {
+/*! For news category filter section */
+.filter-category {
+    height: 5%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 0 1rem;
+    margin: 0.5rem 0;
+} 
+.filter-category > .filter-category-btns {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*  For news category filter section */
+
+
+/*! FOR TOP HEADLINES STYLE SECTION */
+/* .news-section h2 {
     font-size: 1.5rem;
     font-weight: 500;
     margin: 1rem 0;
     padding: 0 1rem;
-}
+} */
+/*  FOR TOP HEADLINES STYLE SECTION */
 .news-cards {
     display: flex;
     /* flex-wrap: wrap;
@@ -74,7 +93,7 @@
     gap: 1.2rem;
     justify-content: center;
 }
-/* Scroll to top button starts */
+/* ! Scroll to top button starts */
 .scroll-to-top {
     position: fixed;
     bottom: 2rem;
@@ -108,7 +127,7 @@
     width: 1.5rem;
 }
 
-/* news pagination section */
+/*! news pagination section */
 .news-pagination {
     width: 100%;
     display: flex;
@@ -141,7 +160,7 @@
     font-weight: bold;
 }
 
-/* neqws pagination section */
+/* news pagination section */
 
 @media only screen and (max-width: 1000px) {
     .news-container {
