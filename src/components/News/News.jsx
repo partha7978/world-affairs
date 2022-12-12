@@ -152,30 +152,14 @@ export default function News(props) {
                         <div className="news-section" id="news-section">
                             {loading && <Loding />}
                             {/* for carousel section */}
-                            <Carousel articles = {articles} loading = { loading } page = { page } totalArticles = { totalArticles } alertMsg = { alertMsg }/>
+                            <Carousel articles = {articles} loading = { loading } page = { page } totalArticles = { totalArticles } alertMsg = { alertMsg } country={props.country}/>
                             {/* for main news cards */}
                             {!loading && 
-                                <h2>
-                                Top Headlines -{" "}
-                                    {props.country === "in"
-                                        ? "India"
-                                        : props.country === "us"
-                                        ? "United States"
-                                        : props.country === "de"
-                                        ? "Germany"
-                                        : props.country === "cn"
-                                        ? "China"
-                                        : props.country === "ru"
-                                        ? "Russia"
-                                        : props.country === "jp"
-                                        ? "Japan"
-                                        : props.country === "au"
-                                        ? "Australia"
-                                        : props.country === "gb"
-                                        ? "United Kingdom"
-                                        : " "
-                                    }
-                                </h2>
+                                <div>
+                                    <div className="filter-category">
+                                        
+                                    </div>
+                               </div>
                             }
                            
 

@@ -54,6 +54,29 @@ export default function Carousel(props) {
                                     <img alt="img" src={element.urlToImage}/>
                                 </div>
                                 <div className="news-text">
+                                    <div className="news-header-text">
+                                        <p>
+                                        Top Headlines -{" "}
+                                        {props.country === "in"
+                                            ? "India"
+                                            : props.country === "us"
+                                            ? "United States"
+                                            : props.country === "de"
+                                            ? "Germany"
+                                            : props.country === "cn"
+                                            ? "China"
+                                            : props.country === "ru"
+                                            ? "Russia"
+                                            : props.country === "jp"
+                                            ? "Japan"
+                                            : props.country === "au"
+                                            ? "Australia"
+                                            : props.country === "gb"
+                                            ? "United Kingdom"
+                                            : " "
+                                        }
+                                        </p>
+                                    </div>
                                     <div className="news-text-inner">
                                         <h4 className="news-title">
                                             {element.title.split('-')[0]}

@@ -23,7 +23,6 @@
     align-items: center;
     flex-direction: column;
     color: #fff;
-    font-size: 2rem;
     font-weight: 700;
     text-transform: uppercase;
     box-shadow: inset 0px -100px 86px -31px rgba(0,0,0,0.8);
@@ -47,6 +46,16 @@
 }
 
 /* carousel text part starts */
+.each-slide > .news-text > .news-header-text {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 0.2rem 1rem;
+    padding-left: 3rem;
+}
+
 .each-slide > .news-text >.news-text-inner {
     width: 100%;
     height: auto;
