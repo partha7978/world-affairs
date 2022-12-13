@@ -66,6 +66,16 @@
 .filter-category > .filter-category-btns {
     display: flex;
     flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0 0.5rem;
+}
+.filter-category > .filter-category-btns > button {
+    padding: 0.3rem 0.8rem;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--foreground-color-hover-light);
+    color: var(--text-color-hover-light);
 }
 
 /*  For news category filter section */
