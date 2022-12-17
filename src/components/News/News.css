@@ -77,7 +77,30 @@
     background-color: var(--foreground-color-hover-light);
     color: var(--text-color-hover-light);
 }
-
+.filter-category > .filter-category-btns > button:nth-child(2) {
+    background-color: #e4f0d7;
+    color: #33691e;
+}
+.filter-category > .filter-category-btns > button:nth-child(3) {
+    background-color: #ffe8eb;
+    color: #d32f2f;
+}
+.filter-category > .filter-category-btns > button:nth-child(4) {
+    background-color: #f3e5f5;
+    color: #6a1b9a;
+}
+.filter-category > .filter-category-btns > button:nth-child(5) {
+    background-color: #e1f5fe;
+    color: #01579b;
+}
+.filter-category > .filter-category-btns > button:nth-child(6) {
+    background-color: #e0f7fa;
+    color: #00838f;
+}
+.filter-category > .filter-category-btns > button:nth-child(7) {
+    background-color: #e6f8e7;
+    color: #1b5e20;
+}
 /*  For news category filter section */
 
 
