@@ -6,6 +6,10 @@
 
 - [Partha](https://www.github.com/partha7978)
 <br><br>
+
+## Screenshots
+  * I will update the screenshots soon.
+
 ## Installation
 
 Install world affairs on your local machine
