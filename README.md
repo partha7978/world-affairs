@@ -1,6 +1,11 @@
 # WORLD AFFAIRS
 ### It contains all the news and events that are happening in the world.
+<br>
 
+## Contributors
+
+- [Partha](https://www.github.com/partha7978)
+<br><br>
 ## Installation
 
 Install world affairs on your local machine
@@ -25,4 +30,23 @@ Install world affairs on your local machine
 
 ## Tech Stack
 
-**Client:** HTML, CSS, JavaScript, React.js, News API, MUI, HeroIcons, React Slideshow Image, React Infinity Scroll
+* HTML
+* CSS
+* JavaScript
+* React
+* Material UI
+* News API
+* HeroIcons
+* React Slideshow Image
+* React Infinity Scroll
+* React Router
+* React Top Loding bar
+
+
+
+
+### Contributions are welcome. Please open an issue or a pull request on  [GitHub](https://github.com/partha7978/world-affairs)
+
+<br> 
+
+## Copyright (c) 2022 <a href="https://parthasarathimuduli.netlify.app/" target="_self">Partha Sarathi Muduli</a>
