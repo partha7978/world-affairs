@@ -20,6 +20,7 @@ export default function News(props) {
     const [alertMsg, setAlertMsg] = useState("");
      //* for scroll to top
     const [scroll, setScroll] = useState(false);
+    const [newsCategory, setNewsCategory] = useState("general");
 
 
     // todo: for showing alert msg
@@ -36,7 +37,7 @@ export default function News(props) {
         props.setLoadingBar(20);
         setLoading(true);
         handleScrollOnClick();
-        let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=20`;
+        let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${newsCategory}&apiKey=${props.apiKey}&page=${page}&pageSize=20`;
         props.setLoadingBar(30);
         let data = await fetch(url);
         props.setLoadingBar(40);
@@ -116,7 +117,12 @@ export default function News(props) {
             .getElementById("news-section")
             .scrollTo({ top: 0, behavior: "smooth" });
     };
-
+    //* for fetching category news
+    const fetchNewsCategory = async (category) => {
+        setNewsCategory(category);
+        console.log("category", category);
+        getNews();
+    };
     //* for fetch more data in infinite scroll
     // fetchMoreData = () => {
     //     this.setState({ page: this.state.page + 1 }, async () => {
@@ -158,8 +164,13 @@ export default function News(props) {
                                 <div className="filter-category">
                                     <p>Filter by category</p>
                                     <div className="filter-category-btns">
+                                    {/* in button functions if Im not using arrow function its giving me the error as 
+                                    Too many re-renders. React limits the number of renders to prevent an infinite loop.
+                                    Hence the solution is to give arrow function
+                                    https://stackoverflow.com/questions/55265604/uncaught-invariant-violation-too-many-re-renders-react-limits-the-number-of-re
+                                    */}
                                         <button>General</button>
-                                        <button>Entertainment</button>
+                                        <button onClick={() => fetchNewsCategory('entertainment')}>Entertainment</button>
                                         <button>Health</button>
                                         <button>Science</button>
                                         <button>Sports</button>
