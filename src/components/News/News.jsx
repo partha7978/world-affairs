@@ -169,13 +169,13 @@ export default function News(props) {
                                     Hence the solution is to give arrow function
                                     https://stackoverflow.com/questions/55265604/uncaught-invariant-violation-too-many-re-renders-react-limits-the-number-of-re
                                     */}
-                                        <button>General</button>
+                                        <button onClick={() => fetchNewsCategory('general')}>General</button>
                                         <button onClick={() => fetchNewsCategory('entertainment')}>Entertainment</button>
-                                        <button>Health</button>
-                                        <button>Science</button>
-                                        <button>Sports</button>
-                                        <button>Technology</button>
-                                        <button>Business</button>
+                                        <button onClick={() => fetchNewsCategory('health')}>Health</button>
+                                        <button onClick={() => fetchNewsCategory('science')}>Science</button>
+                                        <button onClick={() => fetchNewsCategory('sports')}>Sports</button>
+                                        <button onClick={() => fetchNewsCategory('technology')}>Technology</button>
+                                        <button onClick={() => fetchNewsCategory('business')}>Business</button>
                                     </div>
                                 </div>
                             }
