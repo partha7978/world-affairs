@@ -158,7 +158,9 @@ export default function News(props) {
                         <div className="news-section" id="news-section">
                             {loading && <Loding />}
                             {/* for carousel section */}
-                            <Carousel articles = {articles} loading = { loading } page = { page } totalArticles = { totalArticles } alertMsg = { alertMsg } country={props.country}/>
+                            {!loading &&
+                                <Carousel articles = {articles} loading = { loading } page = { page } totalArticles = { totalArticles } alertMsg = { alertMsg } country={props.country}/>
+                            }
                             {/* for main news cards */}
                             {!loading && 
                                 <div className="filter-category">
@@ -187,29 +189,31 @@ export default function News(props) {
                                 hasMore={this.state.articles.length !== this.state.totalArticles}
                                 loader={<Loding />}
                             > */}
-                                <div className="news-cards">
-                                    {articles.map((element) => {
-                                        return (
-                                            <NewsCard
-                                                key={element.url}
-                                                title={
-                                                    element.title.split("-")[0]
-                                                }
-                                                description={
-                                                    element.description
-                                                        ? element.description
-                                                        : "No description found"
-                                                }
-                                                imageUrl={element.urlToImage}
-                                                newsUrl={element.url}
-                                                author={element.author}
-                                                date={element.publishedAt}
-                                                source={element.source.name}
-                                                times={element.publishedAt}
-                                            />
-                                        );
-                                    })}
-                                </div>
+                                {!loading &&
+                                    <div className="news-cards">
+                                        {articles.map((element) => {
+                                            return (
+                                                <NewsCard
+                                                    key={element.url}
+                                                    title={
+                                                        element.title.split("-")[0]
+                                                    }
+                                                    description={
+                                                        element.description
+                                                            ? element.description
+                                                            : "No description found"
+                                                    }
+                                                    imageUrl={element.urlToImage}
+                                                    newsUrl={element.url}
+                                                    author={element.author}
+                                                    date={element.publishedAt}
+                                                    source={element.source.name}
+                                                    times={element.publishedAt}
+                                                />
+                                            );
+                                        })}
+                                    </div>
+                                }
                             {/* </InfiniteScroll> */}
                             {/* Scroll to top button */}
                             {scroll && (
