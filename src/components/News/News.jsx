@@ -20,7 +20,7 @@ export default function News(props) {
     const [alertMsg, setAlertMsg] = useState("");
      //* for scroll to top
     const [scroll, setScroll] = useState(false);
-    const [newsCategory, setNewsCategory] = useState("general");
+    const [newsCategory, setNewsCategory] = useState(props.category);
 
 
     // todo: for showing alert msg
@@ -53,7 +53,7 @@ export default function News(props) {
 
     useEffect(() => {
         getNews();
-    }, [page])
+    }, [page, newsCategory])
     
     // todo: for handling previous and next page operations
     const HandlePreviousPage = async () => {
