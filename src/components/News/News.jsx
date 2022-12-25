@@ -31,7 +31,7 @@ export default function News(props) {
             setOpen(false);
         }, 1500);
     };
-
+    //todo: fetch fuction
     const getNews = async () => {
         props.setLoadingBar(10);
         props.setLoadingBar(20);
@@ -50,6 +50,14 @@ export default function News(props) {
         props.setLoadingBar(80);
         props.setLoadingBar(100);
     }
+    
+    //todo: for fetching category news
+    const fetchNewsCategory = async (category) => {
+        setPage(1);
+        setNewsCategory(category);
+        console.log("category", category);
+        getNews();
+    };
 
     useEffect(() => {
         getNews();
@@ -117,12 +125,7 @@ export default function News(props) {
             .getElementById("news-section")
             .scrollTo({ top: 0, behavior: "smooth" });
     };
-    //* for fetching category news
-    const fetchNewsCategory = async (category) => {
-        setNewsCategory(category);
-        console.log("category", category);
-        getNews();
-    };
+
     //* for fetch more data in infinite scroll
     // fetchMoreData = () => {
     //     this.setState({ page: this.state.page + 1 }, async () => {
