@@ -21,6 +21,9 @@
 .main-logo {
     font-family: 'Sacramento', cursive;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 .main-logo h3 {
     font-size: 2rem;
