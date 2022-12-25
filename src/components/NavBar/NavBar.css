@@ -40,6 +40,16 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+/* todo for DARKMODE button */
+.darkModeBtn {
+    padding: 0.5rem;
+    border: none;
+    background-color: transparent;
+    outline: none;
+/* rotating the icon */
+    transform: rotate(-20deg);
+}
+
 
 .navBar-links {
     color: var(--text-color-light);
