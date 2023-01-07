@@ -10,7 +10,11 @@ import {
 import LoadingBar from 'react-top-loading-bar'
 
 function App() {
+    // state for top loading bar
     const [loadingBar, setLoadingBar] = useState(0);
+    
+    // state for dark mode
+    const [darkMode, setDarkMode] = useState(false);
 
     //todo: Below  Im accing the api key by creating environment variable in .env.local file( which is alreadyignored  by the .gitignore file. ). Search more about it.
     //? Created .env.local file in the root directory and  adding my api key in it. then access it by using process.env.REACT_APP_NEWS_API
