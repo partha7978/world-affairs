@@ -35,7 +35,7 @@ function App() {
                             <Hamburger />
                         </div>
                     </div>
-                    <NavBar />
+                    <NavBar darkMode = {darkMode} setDarkMode = {setDarkMode}/>
                     <Routes>
                         <Route path="/" element={<News setLoadingBar = {setLoadingBar} apiKey = {apiKey} key="in" country="in" category="general" pageSize="20" />} />
                         <Route path="/home" element={<News setLoadingBar = {setLoadingBar} apiKey = {apiKey} key="in" country="in" category="general" pageSize="20" />} />
