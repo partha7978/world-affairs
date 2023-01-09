@@ -15,7 +15,7 @@ import Chip from '@mui/material/Chip';
 import Avatar from '@mui/material/Avatar';
 import { Link } from "react-router-dom";
 
-export default function NavBar(props) {
+export default function NavBar({darkMode, setDarkMode}) {
   let chipStyle = {
     backgroundColor: '#171717',
     color: '#ffffff',
@@ -26,7 +26,8 @@ export default function NavBar(props) {
   
   //? for theme change
     const changeTheme = () => {
-        console.log('clicked');
+        setDarkMode(!darkMode);
+        console.log(darkMode);
     }
   return (
     <div className="navbar-container">
@@ -34,7 +35,7 @@ export default function NavBar(props) {
             <h3>World Affairs</h3>
            
             <button className="darkModeBtn" onClick={changeTheme}>
-                <span class="material-symbols-outlined">
+                <span className="material-symbols-outlined">
                     nightlight
                 </span>
             </button>
