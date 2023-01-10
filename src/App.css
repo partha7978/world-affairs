@@ -23,3 +23,13 @@
     flex-direction: column;
   }
 }
+
+/* For dark theme */
+.dark-background {
+  background-color: #171717 !important;
+  color: #ffffff !important;
+}
+.dark-foreground-one {
+  background-color: #262626 !important;
+  color: #ffffff !important;
+}

@@ -30,7 +30,7 @@ export default function NavBar({darkMode, setDarkMode}) {
         console.log(darkMode);
     }
   return (
-    <div className="navbar-container" style={{backgroundColor: darkMode && '#171717', color: darkMode && '#ffffff'}}>
+    <div className={`navbar-container ${darkMode && 'dark-background'}`}>
         <div className="main-logo">
             <h3>World Affairs</h3>
            
