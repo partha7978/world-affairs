@@ -1,13 +1,16 @@
 :root {
-  --foreground-color-dark: #171717;
-  --foreground-color-hover-dark: rgb(49, 46, 129, 0.75);
   --foreground-color-hover-light: rgb(59, 73, 223, 0.1);
-  --text-color-hover-dark: rgb(165, 180, 252);
   --text-color-hover-light: rgb(47, 58, 178);
-  --text-color-dark: rgb(255, 255, 255);
   --text-color-light: rgb(0, 0, 0);
   --background-color-light: #ffffff;
   --foreground-color-light: #ffffff;   /*else use  FAFAFA or f5f5f5*/
+
+  /* for dark mode */
+  --background-color-dark: #171717;
+  --foreground-color-dark: #262626;
+  --foreground-color-hover-dark: rgb(49, 46, 129, 0.75);
+  --text-color-dark: rgb(255, 255, 255);
+  --text-color-hover-dark: rgb(165, 180, 252);
 }
 .main-container {
   display: flex;
@@ -25,11 +28,15 @@
 }
 
 /* For dark theme */
-.dark-background {
-  background-color: #171717 !important;
-  color: #ffffff !important;
+#dark-background {
+  background-color: var(--background-color-dark) ;
+  color: var(--text-color-dark); ;
 }
-.dark-foreground-one {
-  background-color: #262626 !important;
-  color: #ffffff !important;
+#dark-foreground {
+  background-color: var(--foreground-color-dark);
+  color: var(--text-color-dark);
+}
+#dark-foreground:hover {
+  background-color: var(--foreground-color-hover-dark) !important;
+  color: var(--text-color-hover-dark) !important;
 }
