@@ -30,13 +30,19 @@
 /* For dark theme */
 #dark-background {
   background-color: var(--background-color-dark) ;
-  color: var(--text-color-dark); ;
+  color: var(--text-color-dark);
 }
 #dark-foreground {
   background-color: var(--background-color-dark);
   color: var(--text-color-dark);
 }
 #dark-foreground:hover {
-  background-color: var(--foreground-color-hover-dark);
+  background-color: var(--foreground-color-hover-dark) !important;
+  color: var(--text-color-hover-dark) !important;
+}
+#dark-text {
+  color: var(--text-color-dark);
+}
+#dark-text:hover {
   color: var(--text-color-hover-dark);
 }

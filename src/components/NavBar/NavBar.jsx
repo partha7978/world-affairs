@@ -53,21 +53,21 @@ export default function NavBar({darkMode, setDarkMode}) {
             <Link className="nav-link-item" to="/in" ><p id = {`${darkMode && 'dark-foreground'}`}><img src={indiaLogo} alt="india logo" />India</p></Link>
             <Link className="nav-link-item" to="/world" ><p id = {`${darkMode && 'dark-foreground'}`}><img src={worldLogo} alt="world logo" />World</p></Link>
             <div className="navBar-chip-countries">
-                <span>Filter by countries</span>
-                <Divider sx={{backgroundColor: '#ffffff'}}/>
+                <span id = {`${darkMode && 'dark-background'}`}>Filter by countries</span>
+                <Divider sx={{backgroundColor: darkMode ? 'rgb(72, 72, 72)' : '#ffffff'}}/>
                 <div className="navBar-chips">
-                    <Link to="/us"><Chip sx={chipStyle} className="chip" label="USA" avatar={<Avatar alt="usaLogo" src={usaLogo} />} /></Link>
-                    <Link to="/germany"><Chip sx={chipStyle} className="chip" label="Germany" avatar={<Avatar alt="germanyLogo" src={germanyLogo} />} /></Link>
-                    <Link to="/china"><Chip sx={chipStyle} className="chip" label="China" avatar={<Avatar alt="chinaLogo" src={chinaLogo} />} /></Link>
-                    <Link to="/russia"><Chip sx={chipStyle} className="chip" label="Russia" avatar={<Avatar alt="russiaLogo" src={russiaLogo} />} /></Link>
-                    <Link to="/japan"><Chip sx={chipStyle} className="chip" label="Japan" avatar={<Avatar alt="japanLogo" src={japanLogo} />} /></Link>
-                    <Link to="/australia"><Chip sx={chipStyle} className="chip" label="Australia" avatar={<Avatar alt="australiaLogo" src={australiaLogo} />} /></Link>
-                    <Link to="/uk"><Chip sx={chipStyle} className="chip" label="United Kingdom" avatar={<Avatar alt="unitedKingdomLogo" src={unitedKingdomLogo} />} /></Link>
+                    <Link to="/us"><Chip sx={chipStyle} id = {`${darkMode && 'dark-foreground'}`} className="chip" label="USA" avatar={<Avatar alt="usaLogo" src={usaLogo} />} /></Link>
+                    <Link to="/germany"><Chip sx={chipStyle} id = {`${darkMode && 'dark-foreground'}`} className="chip" label="Germany" avatar={<Avatar alt="germanyLogo" src={germanyLogo} />} /></Link>
+                    <Link to="/china"><Chip sx={chipStyle} id = {`${darkMode && 'dark-foreground'}`} className="chip" label="China" avatar={<Avatar alt="chinaLogo" src={chinaLogo} />} /></Link>
+                    <Link to="/russia"><Chip sx={chipStyle} id = {`${darkMode && 'dark-foreground'}`} className="chip" label="Russia" avatar={<Avatar alt="russiaLogo" src={russiaLogo} />} /></Link>
+                    <Link to="/japan"><Chip sx={chipStyle} id = {`${darkMode && 'dark-foreground'}`} className="chip" label="Japan" avatar={<Avatar alt="japanLogo" src={japanLogo} />} /></Link>
+                    <Link to="/australia"><Chip sx={chipStyle} id = {`${darkMode && 'dark-foreground'}`} className="chip" label="Australia" avatar={<Avatar alt="australiaLogo" src={australiaLogo} />} /></Link>
+                    <Link to="/uk"><Chip sx={chipStyle} id = {`${darkMode && 'dark-foreground'}`} className="chip" label="United Kingdom" avatar={<Avatar alt="unitedKingdomLogo" src={unitedKingdomLogo} />} /></Link>
                 </div>
             </div>
         </div>
         <div className="navBar-social">
-            <p>Developed by <a href="http://">Partha</a></p>
+            <p>Developed by <a href="http://" id = {`${darkMode && 'dark-text'}`}>Partha</a></p>
         </div>
     </div>
   )
