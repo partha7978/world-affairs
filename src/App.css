@@ -33,10 +33,10 @@
   color: var(--text-color-dark); ;
 }
 #dark-foreground {
-  background-color: var(--foreground-color-dark);
+  background-color: var(--background-color-dark);
   color: var(--text-color-dark);
 }
 #dark-foreground:hover {
-  background-color: var(--foreground-color-hover-dark) !important;
-  color: var(--text-color-hover-dark) !important;
+  background-color: var(--foreground-color-hover-dark);
+  color: var(--text-color-hover-dark);
 }
