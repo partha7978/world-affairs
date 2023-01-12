@@ -193,7 +193,7 @@ export default function News(props) {
                                 loader={<Loding />}
                             > */}
                                 {!loading &&
-                                    <div className="news-cards">
+                                    <div className="news-cards" id = {`${props.darkMode && 'dark-background'}`}>
                                         {articles.map((element) => {
                                             return (
                                                 <NewsCard

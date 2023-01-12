@@ -37,16 +37,16 @@ function App() {
                     </div>
                     <NavBar darkMode = {darkMode} setDarkMode = {setDarkMode}/>
                     <Routes>
-                        <Route path="/" element={<News setLoadingBar = {setLoadingBar} apiKey = {apiKey} key="in" country="in" category="general" pageSize="20" />} />
-                        <Route path="/home" element={<News setLoadingBar = {setLoadingBar} apiKey = {apiKey} key="in" country="in" category="general" pageSize="20" />} />
-                        <Route path="/in" element={<News setLoadingBar = {setLoadingBar} apiKey = {apiKey} key="in" country="in" category="general" pageSize="20" />} />
-                        <Route path="/us" element={<News setLoadingBar = {setLoadingBar} apiKey = {apiKey} key="us" country="us" category="general" pageSize="20" />} />
-                        <Route path="/germany" element={<News setLoadingBar = {setLoadingBar} apiKey = {apiKey} key="germany" country="de" category="general" pageSize="20" />} />
-                        <Route path="/china" element={<News setLoadingBar = {setLoadingBar} apiKey = {apiKey} key="china" country="cn" category="general" pageSize="20" />} />
-                        <Route path="/russia" element={<News setLoadingBar = {setLoadingBar} apiKey = {apiKey} key="russia" country="ru" category="general" pageSize="20" />} />
-                        <Route path="/japan" element={<News setLoadingBar = {setLoadingBar} apiKey = {apiKey} key="japan" country="jp" category="general" pageSize="20" />} />
-                        <Route path="/australia" element={<News setLoadingBar = {setLoadingBar} apiKey = {apiKey} key="australia" country="au" category="general" pageSize="20" />} />
-                        <Route path="/uk" element={<News setLoadingBar = {setLoadingBar} apiKey = {apiKey} key="uk" country="gb" category="general" pageSize="20" />} />
+                        <Route path="/" element={<News darkMode = {darkMode} setLoadingBar = {setLoadingBar} apiKey = {apiKey} key="in" country="in" category="general" pageSize="20" />} />
+                        <Route path="/home" element={<News darkMode = {darkMode} setLoadingBar = {setLoadingBar} apiKey = {apiKey} key="in" country="in" category="general" pageSize="20" />} />
+                        <Route path="/in" element={<News darkMode = {darkMode} setLoadingBar = {setLoadingBar} apiKey = {apiKey} key="in" country="in" category="general" pageSize="20" />} />
+                        <Route path="/us" element={<News darkMode = {darkMode} setLoadingBar = {setLoadingBar} apiKey = {apiKey} key="us" country="us" category="general" pageSize="20" />} />
+                        <Route path="/germany" element={<News darkMode = {darkMode} setLoadingBar = {setLoadingBar} apiKey = {apiKey} key="germany" country="de" category="general" pageSize="20" />} />
+                        <Route path="/china" element={<News darkMode = {darkMode} setLoadingBar = {setLoadingBar} apiKey = {apiKey} key="china" country="cn" category="general" pageSize="20" />} />
+                        <Route path="/russia" element={<News darkMode = {darkMode} setLoadingBar = {setLoadingBar} apiKey = {apiKey} key="russia" country="ru" category="general" pageSize="20" />} />
+                        <Route path="/japan" element={<News darkMode = {darkMode} setLoadingBar = {setLoadingBar} apiKey = {apiKey} key="japan" country="jp" category="general" pageSize="20" />} />
+                        <Route path="/australia" element={<News darkMode = {darkMode} setLoadingBar = {setLoadingBar} apiKey = {apiKey} key="australia" country="au" category="general" pageSize="20" />} />
+                        <Route path="/uk" element={<News darkMode = {darkMode} setLoadingBar = {setLoadingBar} apiKey = {apiKey} key="uk" country="gb" category="general" pageSize="20" />} />
                     </Routes>
                 </div>
             </div>
