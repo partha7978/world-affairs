@@ -35,9 +35,16 @@ export default function NavBar({darkMode, setDarkMode}) {
             <h3>World Affairs</h3>
            
             <button className="darkModeBtn" onClick={changeTheme}>
+                {darkMode
+                ?  
+                <span className="material-symbols-outlined" style={{color: '#ffffff'}}>
+                    light_mode
+                </span>
+                : 
                 <span className="material-symbols-outlined">
                     nightlight
-                </span>
+                </span>}
+                
             </button>
         </div>
         <div className="navBar-links">
