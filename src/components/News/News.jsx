@@ -147,7 +147,7 @@ export default function News(props) {
     // }
 
         return (
-            <div className="container-parent">
+            <div className="container-parent" id = {`${props.darkMode && 'dark-background'}`}>
                 <Snackbar
                     open={open}
                     autoHideDuration={6000} // for how long the snackbar will be visible
@@ -156,8 +156,8 @@ export default function News(props) {
                     key={transition.name}
                 />
 
-                <div className="news-container">
-                    <div className="news-main-container">
+                <div className="news-container" id = {`${props.darkMode && 'dark-background'}`}>
+                    <div className="news-main-container" id = {`${props.darkMode && 'dark-background'}`}>
                         <div className="news-section" id="news-section">
                             {loading && <Loding />}
                             {/* for carousel section */}
@@ -166,9 +166,9 @@ export default function News(props) {
                             }
                             {/* for main news cards */}
                             {!loading && 
-                                <div className="filter-category">
+                                <div className="filter-category" id = {`${props.darkMode && 'dark-background'}`}>
                                     <p>Filter by category</p>
-                                    <div className="filter-category-btns">
+                                    <div className="filter-category-btns" id = {`${props.darkMode && 'dark-background'}`}>
                                     {/* in button functions if Im not using arrow function its giving me the error as 
                                     Too many re-renders. React limits the number of renders to prevent an infinite loop.
                                     Hence the solution is to give arrow function
