@@ -157,7 +157,7 @@ export default function News(props) {
                 />
 
                 <div className="news-container" id = {`${props.darkMode && 'dark-background'}`}>
-                    <div className="news-main-container" id = {`${props.darkMode && 'dark-background'}`}>
+                    <div className="news-main-container" id = {`${props.darkMode && 'dark-foreground-noHover'}`}>
                         <div className="news-section" id="news-section">
                             {loading && <Loding />}
                             {/* for carousel section */}
@@ -166,9 +166,9 @@ export default function News(props) {
                             }
                             {/* for main news cards */}
                             {!loading && 
-                                <div className="filter-category" id = {`${props.darkMode && 'dark-background'}`}>
+                                <div className="filter-category" id = {`${props.darkMode && 'dark-foreground-noHover'}`}>
                                     <p>Filter by category</p>
-                                    <div className="filter-category-btns" id = {`${props.darkMode && 'dark-background'}`}>
+                                    <div className="filter-category-btns" id = {`${props.darkMode && 'dark-foreground-noHover'}`}>
                                     {/* in button functions if Im not using arrow function its giving me the error as 
                                     Too many re-renders. React limits the number of renders to prevent an infinite loop.
                                     Hence the solution is to give arrow function
@@ -193,7 +193,7 @@ export default function News(props) {
                                 loader={<Loding />}
                             > */}
                                 {!loading &&
-                                    <div className="news-cards" id = {`${props.darkMode && 'dark-background'}`}>
+                                    <div className="news-cards" id = {`${props.darkMode && 'dark-foreground-noHover'}`}>
                                         {articles.map((element) => {
                                             return (
                                                 <NewsCard

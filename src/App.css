@@ -32,6 +32,10 @@
   background-color: var(--background-color-dark) ;
   color: var(--text-color-dark);
 }
+#dark-foreground-noHover  {
+  background-color: var(--foreground-color-dark);
+  color: var(--text-color-dark);
+}
 #dark-foreground {
   background-color: var(--background-color-dark);
   color: var(--text-color-dark);
