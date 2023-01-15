@@ -44,7 +44,7 @@ export default function NewsCard({
     times,
     darkMode
 }) {
-    const darkModeTheme = createTheme(getDesignTokens('dark'));
+    const darkModeTheme = createTheme(getDesignTokens(darkMode ? 'dark' : 'light'));
 
     //* function for showing date in proper format
     const showDate = () => {
