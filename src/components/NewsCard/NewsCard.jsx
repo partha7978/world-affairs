@@ -11,16 +11,24 @@ const getDesignTokens = (mode) => ({
     palette: {
       mode,
       primary: {
-        ...(mode === 'dark' && {
+        ...(mode === 'dark' ? {
           main: '#171717',
+        } : {
+            main: '#ffffff',
         }),
       },
-      ...(mode === 'dark' && {
+      ...(mode === 'dark' ? {
         background: {
           default: '#000000',
           paper: '#171717',
         }
-      }),
+      }
+      : {
+        background: {
+            default: '#ffffff',
+            paper: '#ffffff',
+            }
+        }),
     },
   });
   
@@ -37,11 +45,6 @@ export default function NewsCard({
     darkMode
 }) {
     const darkModeTheme = createTheme(getDesignTokens('dark'));
-    const darkTheme = createTheme({
-        palette: {
-          mode: 'dark',
-        },
-      });
 
     //* function for showing date in proper format
     const showDate = () => {
@@ -54,7 +57,7 @@ export default function NewsCard({
     };
     return (
         <ThemeProvider theme={darkModeTheme}>
-        <Card className="newsCard">
+        <Card className="newsCard" sx={{backgroundImage: 'none'}}>
             {/* <CardActionArea>   */}
             {/* Commenting this because this is a clickable section and 
             if inside this im adding any button its giving me "button 
