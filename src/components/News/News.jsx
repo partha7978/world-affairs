@@ -197,6 +197,7 @@ export default function News(props) {
                                         {articles.map((element) => {
                                             return (
                                                 <NewsCard
+                                                    darkMode = {props.darkMode}
                                                     key={element.url}
                                                     title={
                                                         element.title.split("-")[0]

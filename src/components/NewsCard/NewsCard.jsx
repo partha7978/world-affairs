@@ -5,6 +5,25 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 // import { Button, CardActions } from "@mui/material";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+const getDesignTokens = (mode) => ({
+    palette: {
+      mode,
+      primary: {
+        ...(mode === 'dark' && {
+          main: '#171717',
+        }),
+      },
+      ...(mode === 'dark' && {
+        background: {
+          default: '#000000',
+          paper: '#171717',
+        }
+      }),
+    },
+  });
+  
 
 export default function NewsCard({
     title,
@@ -15,7 +34,14 @@ export default function NewsCard({
     date,
     source,
     times,
+    darkMode
 }) {
+    const darkModeTheme = createTheme(getDesignTokens('dark'));
+    const darkTheme = createTheme({
+        palette: {
+          mode: 'dark',
+        },
+      });
 
     //* function for showing date in proper format
     const showDate = () => {
@@ -27,6 +53,7 @@ export default function NewsCard({
         return `${day} - ${date} ${month}`;
     };
     return (
+        <ThemeProvider theme={darkModeTheme}>
         <Card className="newsCard">
             {/* <CardActionArea>   */}
             {/* Commenting this because this is a clickable section and 
@@ -48,7 +75,7 @@ export default function NewsCard({
                 </div>
 
                 <h5 className="title">{title}</h5>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="text.secondary" >
                     {description}
                 </Typography>
             </CardContent>
@@ -70,5 +97,6 @@ export default function NewsCard({
                 </a>
             </CardContent>
         </Card>
+        </ThemeProvider>
     );
 }
