@@ -29,7 +29,7 @@
 
 /* For dark theme */
 #dark-background {
-  background-color: var(--background-color-dark) ;
+  background-color: #000000;
   color: var(--text-color-dark);
 }
 #dark-foreground-noHover  {
