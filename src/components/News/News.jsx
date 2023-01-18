@@ -242,7 +242,7 @@ export default function News(props) {
                             )}
                             {!loading && 
                                 <div className="news-pagination">
-                                <p
+                                <p  id = {`${props.darkMode && 'dark-foreground'}`}
                                     className="news-pagination-btn"
                                     onClick={HandlePreviousPage}
                                 >
@@ -261,10 +261,10 @@ export default function News(props) {
                                         />
                                     </svg>
                                 </p>
-                                <p className="page-show-btn">
+                                <p className="page-show-btn" id = {`${props.darkMode && 'dark-mode-fixed-hoverColor'}`}>
                                     {page}
                                 </p>
-                                <p
+                                <p  id = {`${props.darkMode && 'dark-foreground'}`}
                                     className="news-pagination-btn"
                                     onClick={HandleNextPage}
                                 >

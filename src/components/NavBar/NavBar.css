@@ -3,7 +3,7 @@
     width: 20%;
     background-color: var(--background-color-light);
     /* border-radius: 0 20px 20px 0; */
-    border-right: 1px solid rgba(212, 212, 212);
+    border-right: 1px solid;
     display: flex;
     flex-direction: column;
     transition: color 0.4s linear !important;

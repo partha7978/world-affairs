@@ -50,3 +50,7 @@
 #dark-text:hover {
   color: var(--text-color-hover-dark);
 }
+#dark-mode-fixed-hoverColor {
+  background-color: var(--foreground-color-hover-dark) !important;
+  color: var(--text-color-hover-dark) !important;
+}
