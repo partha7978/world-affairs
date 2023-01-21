@@ -174,7 +174,7 @@ export default function News(props) {
                                     Hence the solution is to give arrow function
                                     https://stackoverflow.com/questions/55265604/uncaught-invariant-violation-too-many-re-renders-react-limits-the-number-of-re
                                     */}
-                                        <button onClick={() => fetchNewsCategory('general')}>General</button>
+                                        <button onClick={() => fetchNewsCategory('general')} id = {`${props.darkMode && 'dark-chip'}`}>General</button>
                                         <button onClick={() => fetchNewsCategory('entertainment')}>Entertainment</button>
                                         <button onClick={() => fetchNewsCategory('health')}>Health</button>
                                         <button onClick={() => fetchNewsCategory('science')}>Science</button>
@@ -222,7 +222,7 @@ export default function News(props) {
                             {/* Scroll to top button */}
                             {scroll && (
                                 <div className="scroll-to-top">
-                                    <button onClick={handleScrollOnClick}>
+                                    <button onClick={handleScrollOnClick} id = {`${props.darkMode && 'scroll-to-top-dark'}`}>
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"

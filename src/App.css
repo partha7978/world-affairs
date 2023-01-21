@@ -54,3 +54,7 @@
   background-color: var(--foreground-color-hover-dark) !important;
   color: var(--text-color-hover-dark) !important;
 }
+#dark-chip {
+  background-color: var(--foreground-color-hover-dark);
+  color: var(--text-color-hover-dark);
+}

@@ -73,7 +73,7 @@ export default function NewsCard({
             />
             <CardContent sx={{ paddingBottom: 1.2 }}>
                 <div className="card-header">
-                    <button className="card-chip-primary">{source}</button>
+                    <button className="card-chip-primary" id = {`${darkMode && 'dark-chip'}`}>{source}</button>
                     <button className="card-chip-secondary">{showDate()}</button>
                 </div>
 
