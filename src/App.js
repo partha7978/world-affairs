@@ -27,11 +27,11 @@ function App() {
                         progress={loadingBar}
                         height={3}
                     />
-                    <div className="news-navBar">
+                    <div className="news-navBar" id = {`${darkMode && 'dark-background'}`}>
                         <div className="main-logo">
                             <h3>World Affairs</h3>
                         </div>
-                        <div className="hamburger">
+                        <div className="hamburger" id = {`${darkMode && 'dark-text'}`}>
                             <Hamburger />
                         </div>
                     </div>
