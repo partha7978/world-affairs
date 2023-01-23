@@ -18,7 +18,7 @@ import australiaLogo from '../../assets/image/australia.webp'
 import unitedKingdomLogo from '../../assets/image/unitedKingdom.webp'
 import { Link } from "react-router-dom";
 
-export default function Hamburger() {
+export default function Hamburger({darkMode}) {
   let chipStyle = {
     margin: 0.5,
     cursor: 'pointer',
@@ -54,7 +54,7 @@ export default function Hamburger() {
     //   alignItems="center"
     //   flexDirection="column"
     >
-      <List className="hamBurger-list">
+      <List className="hamBurger-list" id = {`${darkMode && 'dark-foreground'}`}>
         <Link to="/home" ><p><img src={homeImage} alt="home logo" />Home</p></Link>
         <Link to="/" ><p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
           <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
@@ -64,7 +64,7 @@ export default function Hamburger() {
         <Link to="/in" ><p><img src={indiaLogo} alt="india logo" />India</p></Link>
         <Link to="/world" ><p><img src={worldLogo} alt="world logo" />World</p></Link>
       </List>
-      <List>
+      <List id = {`${darkMode && 'dark-foreground'}`}>
         <div className="hamburger-chip-countries">
           <span>Filter by countries</span>
           <Divider sx={{ backgroundColor: '#ffffff' }} />
@@ -79,7 +79,7 @@ export default function Hamburger() {
           </div>
         </div>
       </List>
-      <List sx={{ paddingBottom: 0 }}>
+      <List sx={{ paddingBottom: 0 }} id = {`${darkMode && 'dark-foreground'}`}>
         <div className="hamburger-social">
           <p>Developed by <a href="http://">Partha</a></p>
         </div>

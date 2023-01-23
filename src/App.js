@@ -32,7 +32,7 @@ function App() {
                             <h3>World Affairs</h3>
                         </div>
                         <div className="hamburger" id = {`${darkMode && 'dark-text'}`}>
-                            <Hamburger />
+                            <Hamburger darkMode = {darkMode} />
                         </div>
                     </div>
                     <NavBar darkMode = {darkMode} setDarkMode = {setDarkMode}/>
