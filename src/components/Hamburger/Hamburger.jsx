@@ -55,27 +55,27 @@ export default function Hamburger({darkMode}) {
     //   flexDirection="column"
     >
       <List className="hamBurger-list" id = {`${darkMode && 'dark-foreground'}`}>
-        <Link to="/home" ><p><img src={homeImage} alt="home logo" />Home</p></Link>
-        <Link to="/" ><p><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+        <Link to="/home" ><p id = {`${darkMode && 'dark-chip'}`}><img src={homeImage} alt="home logo" />Home</p></Link>
+        <Link to="/" ><p id = {`${darkMode && 'dark-chip'}`}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
           <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
         </svg>
           Top Headlines
         </p></Link>
-        <Link to="/in" ><p><img src={indiaLogo} alt="india logo" />India</p></Link>
-        <Link to="/world" ><p><img src={worldLogo} alt="world logo" />World</p></Link>
+        <Link to="/in" ><p id = {`${darkMode && 'dark-chip'}`}><img src={indiaLogo} alt="india logo" />India</p></Link>
+        <Link to="/world" ><p id = {`${darkMode && 'dark-chip'}`}><img src={worldLogo} alt="world logo" />World</p></Link>
       </List>
       <List id = {`${darkMode && 'dark-foreground'}`}>
         <div className="hamburger-chip-countries">
           <span>Filter by countries</span>
           <Divider sx={{ backgroundColor: '#ffffff' }} />
           <div className="hamburger-chips">
-            <Link to="/us"><Chip sx={chipStyle} className="chip" label="USA" avatar={<Avatar alt="usaLogo" src={usaLogo} />} /></Link>
-            <Link to="/germany"><Chip sx={chipStyle} className="chip" label="Germany" avatar={<Avatar alt="germanyLogo" src={germanyLogo} />} /></Link>
-            <Link to="/china"><Chip sx={chipStyle} className="chip" label="China" avatar={<Avatar alt="chinaLogo" src={chinaLogo} />} /></Link>
-            <Link to="/russia"><Chip sx={chipStyle} className="chip" label="Russia" avatar={<Avatar alt="russiaLogo" src={russiaLogo} />} /></Link>
-            <Link to="/japan"><Chip sx={chipStyle} className="chip" label="Japan" avatar={<Avatar alt="japanLogo" src={japanLogo} />} /></Link>
-            <Link to="/australia"><Chip sx={chipStyle} className="chip" label="Australia" avatar={<Avatar alt="australiaLogo" src={australiaLogo} />} /></Link>
-            <Link to="/uk"><Chip sx={chipStyle} className="chip" label="United Kingdom" avatar={<Avatar alt="unitedKingdomLogo" src={unitedKingdomLogo} />} /></Link>
+            <Link to="/us"><Chip sx={chipStyle} className="chip" id = {`${darkMode && 'dark-chip'}`} label="USA" avatar={<Avatar alt="usaLogo" src={usaLogo} />} /></Link>
+            <Link to="/germany"><Chip sx={chipStyle} className="chip" id = {`${darkMode && 'dark-chip'}`} label="Germany" avatar={<Avatar alt="germanyLogo" src={germanyLogo} />} /></Link>
+            <Link to="/china"><Chip sx={chipStyle} className="chip" id = {`${darkMode && 'dark-chip'}`} label="China" avatar={<Avatar alt="chinaLogo" src={chinaLogo} />} /></Link>
+            <Link to="/russia"><Chip sx={chipStyle} className="chip" id = {`${darkMode && 'dark-chip'}`} label="Russia" avatar={<Avatar alt="russiaLogo" src={russiaLogo} />} /></Link>
+            <Link to="/japan"><Chip sx={chipStyle} className="chip" id = {`${darkMode && 'dark-chip'}`} label="Japan" avatar={<Avatar alt="japanLogo" src={japanLogo} />} /></Link>
+            <Link to="/australia"><Chip sx={chipStyle} className="chip" id = {`${darkMode && 'dark-chip'}`} label="Australia" avatar={<Avatar alt="australiaLogo" src={australiaLogo} />} /></Link>
+            <Link to="/uk"><Chip sx={chipStyle} className="chip" id = {`${darkMode && 'dark-chip'}`} label="United Kingdom" avatar={<Avatar alt="unitedKingdomLogo" src={unitedKingdomLogo} />} /></Link>
           </div>
         </div>
       </List>
