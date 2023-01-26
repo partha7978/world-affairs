@@ -81,7 +81,7 @@ export default function Hamburger({darkMode}) {
       </List>
       <List sx={{ paddingBottom: 0 }} id = {`${darkMode && 'dark-foreground'}`}>
         <div className="hamburger-social">
-          <p>Developed by <a href="http://">Partha</a></p>
+          <p>Developed by <a id = {`${darkMode && 'dark-text'}`} href="http://">Partha</a></p>
         </div>
       </List>
     </Box>
