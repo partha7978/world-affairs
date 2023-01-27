@@ -74,7 +74,7 @@ export default function NavBar({darkMode, setDarkMode}) {
             </div>
         </div>
         <div className="navBar-social">
-            <p>Developed by <a href="http://" id = {`${darkMode && 'dark-text'}`}>Partha</a></p>
+            <p>Developed by <a href="https://parthasarathimuduli.netlify.app/" id = {`${darkMode && 'dark-text'}`}>Partha</a></p>
         </div>
     </div>
   )
