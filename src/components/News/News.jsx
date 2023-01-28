@@ -46,6 +46,8 @@ export default function News(props) {
         console.log(parsedData);
         setArticles(parsedData.articles);
         setTotalArticles(parsedData.totalResults);
+        document.title = `World Affairs - ${props.country} - ${newsCategory}`
+        console.log(`World Affairs - ${props.country} - ${newsCategory}`);
         setLoading(false);
         props.setLoadingBar(80);
         props.setLoadingBar(100);
