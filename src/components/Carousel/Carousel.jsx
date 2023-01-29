@@ -54,7 +54,7 @@ export default function Carousel(props) {
                                     <img alt="img" src={element.urlToImage}/>
                                 </div>
                                 <div className="news-text">
-                                    <div className="news-header-text">
+                                    {/* <div className="news-header-text">
                                         <p>
                                         Top Headlines -{" "}
                                         {props.country === "in"
@@ -76,7 +76,7 @@ export default function Carousel(props) {
                                             : " "
                                         }
                                         </p>
-                                    </div>
+                                    </div> */}
                                     <div className="news-text-inner">
                                         <h4 className="news-title">
                                             {element.title.split('-')[0]}
