@@ -8,7 +8,15 @@
 <br><br>
 
 ## Screenshots
-  * I will update the screenshots soon.
+  / create a screenshot table for the project
+
+| Home Page | Home Page Card Layout | News Details Page |
+| :---: | :---: | :---: |
+| ![App Screenshot](./src/assets/image/readme/homePageLight.jpg) | ![App Screenshot](./src/assets/image/readme/homepage-card-layout.jpg) | ![App Screenshot](_screenshots/news-details.png) |
+
+<br>
+
+
 
 ## Installation
 
