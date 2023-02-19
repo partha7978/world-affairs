@@ -10,11 +10,12 @@
 ## Screenshots
   / create a screenshot table for the project
 
-| Home Page | Home Page Card Layout | News Details Page |
+| Home Page | Home Page Card Layout | News Card |
 | :---: | :---: | :---: |
-| ![App Screenshot](./src/assets/image/readme/homePageLight.jpg) | ![App Screenshot](./src/assets/image/readme/homepage-card-layout.jpg) | ![App Screenshot](_screenshots/news-details.png) |
+| ![App Screenshot](./src/assets/image/readme/homePageLight.jpg) | ![App Screenshot](./src/assets/image/readme/homepage-card-layout.jpg) | ![App Screenshot](./src/assets/image/readme/news-card-light.jpg) |
 
 <br>
+
 
 
 
