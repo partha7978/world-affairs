@@ -10,9 +10,19 @@
 ## Screenshots
   / create a screenshot table for the project
 
+  ### Light Mode
+
 | Home Page | Home Page Card Layout | News Card |
 | :---: | :---: | :---: |
-| ![App Screenshot](./src/assets/image/readme/homePageLight.jpg) | ![App Screenshot](./src/assets/image/readme/homepage-card-layout.jpg) | ![App Screenshot](./src/assets/image/readme/news-card-light.jpg) |
+| ![App Screenshot](./src/assets/image/readme/homePageLight.jpg) | ![App Screenshot](./src/assets/image/readme/homepage-card-layout-light.jpg) | ![App Screenshot](./src/assets/image/readme/news-card-light.jpg) |
+
+<br>
+
+### Dark Mode
+
+| Home Page | Home Page Card Layout | News Card |
+| :---: | :---: | :---: |
+| ![App Screenshot](./src/assets/image/readme/homePageDark.jpg) | ![App Screenshot](./src/assets/image/readme/homepage-card-layout-dark.jpg) | ![App Screenshot]() |
 
 <br>
 
