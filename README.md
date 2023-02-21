@@ -8,9 +8,8 @@
 <br><br>
 
 ## Screenshots
-  / create a screenshot table for the project
 
-  ### Light Mode
+### Light Mode
 
 | Home Page | Home Page Card Layout | News Card |
 | :---: | :---: | :---: |
@@ -22,7 +21,7 @@
 
 | Home Page | Home Page Card Layout | News Card |
 | :---: | :---: | :---: |
-| ![App Screenshot](./src/assets/image/readme/homePageDark.jpg) | ![App Screenshot](./src/assets/image/readme/homepage-card-layout-dark.jpg) | ![App Screenshot]() |
+| ![App Screenshot](./src/assets/image/readme/homePageDark.jpg) | ![App Screenshot](./src/assets/image/readme/homepage-card-layout-dark.jpg) | ![App Screenshot](./src/assets/image/readme/news-card-dark.jpg) |
 
 <br>
 
